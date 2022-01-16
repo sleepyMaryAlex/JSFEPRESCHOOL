@@ -338,3 +338,77 @@ body {
 .play-hover:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
+
+/* ------------Price------------ */
+
+#price {
+    height: 843px;
+    padding: 0 20px;
+    padding-top: 98px;
+}
+
+.price-items {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.price-item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 450px;
+    height: 505px;
+    border: 3px solid var(--color-gold);
+}
+
+.price-items h3 {
+    margin-top: 40px;
+    font-family: 'Merriweather', serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 56px;
+    color: var(--color-white);
+}
+
+.price {
+    margin-top: 21px;
+    font-family: 'Merriweather', serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 48px;
+    color: var(--color-gold);
+}
+
+.frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.frame span {
+    display: block;
+    font-size: 18px;
+    line-height: 200%;
+    color: var(--color-white);
+}
+  
+.btn-price {
+    margin-top: 39px;
+    width: 220px;
+    height: 55px;
+    background-color: var(--color-gold);
+    font-family: inherit;
+    font-weight: 500;
+    border: none;
+    transition: color 0.4s;
+}
+
+.btn-price:hover {
+    color: var(--color-white);
+}
