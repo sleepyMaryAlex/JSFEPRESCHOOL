@@ -180,5 +180,82 @@ body {
 }
 
 .btn:hover {
-      color: var(--color-white);
+    color: var(--color-white);
+}
+
+/* ---------Skills------------ */
+
+#skills {
+    height: 482px;
+    margin-bottom: 2px;
+    padding: 0 20px;
+    padding-top: 100px;
+}
+
+#skills h2,
+#portfolio h2,
+#video h2,
+#price h2 {
+    height: 80px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 60px;
+    font-family: 'Merriweather', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 80px;
+    text-align: center;
+    color: var(--color-gold);
+    background: url(../assets/svg/section-title-line.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#skills h2 span,
+#portfolio h2 span,
+#video h2 span,
+#price h2 span {
+    padding: 0 20px;
+    background-color: var(--color-black);
+}
+
+.skills-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 242px;
+}
+
+.skills-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 240px;
+    width: 320px; 
+    margin-right: 40px;
+}
+
+.skills-item:last-child {
+    margin-right: 0;
+}
+
+.skills-item h3 {
+    width: 280px;
+    height: 40px;
+    margin-top: 50px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.skills-item p {
+    width: 280px;
+    height: 72px;
+    margin: 21px 20px 10px 20px;
+    font-size: 18px;
+    line-height: 36px;
+    text-align: center;
+    color: var(--color-white);
 }
