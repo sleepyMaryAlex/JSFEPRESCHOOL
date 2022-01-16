@@ -259,3 +259,50 @@ body {
     text-align: center;
     color: var(--color-white);
 }
+
+/* ---------Portfolio-------- */
+
+#portfolio {
+    height: 1500px;
+    padding: 0 20px;
+    padding-top: 98px;
+}
+
+.portfolio-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.portfolio-btn {
+    width: 220px;
+    height: 55px;
+    margin-right: 5px;
+    background-color: transparent;
+    border: 2px solid var(--color-gold);
+    color: var(--color-gold);
+    font-family: inherit;
+    transition: color 0.4s;
+}
+
+.portfolio-btn:last-child {
+    margin-right: 0;
+    background-color: var(--color-gold);
+    color: var(--color-black);
+}
+
+.portfolio-btn:hover {
+    color: var(--color-white);
+}
+
+.portfolio-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.portfolio-img {
+    margin-bottom: 25px;
+}
