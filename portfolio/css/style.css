@@ -493,3 +493,46 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: var(--color-gold);
   transition: background-color 0s ease-in-out 9000s;
 }
+
+/* ------------Footer------------ */
+
+.footer {
+    height: 150px;
+    padding: 0 20px;
+}
+
+.footer-container,
+.social-list,
+.footer-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-container {
+    padding-top: 50px;
+}
+
+.footer-data {
+    width: 182px;
+    height: 50px;
+    padding: 15px 0;
+    color: var(--color-white);
+}
+
+.rs-link {
+    width: 211px;
+    height: 50px;
+    padding: 15px 0;
+    margin-left: 7px;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: color 0.4s;
+}
+
+.footer-data a {
+    padding-right: 14px;
+    text-decoration: none;
+    color: var(--color-white);
+    transition: color 0.4s;
+}
