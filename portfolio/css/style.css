@@ -133,3 +133,52 @@ body {
     cursor: pointer;
 }
 
+/* ----------Hero----------- */
+
+#hero {
+    height: 910px;
+    background: url(../assets/img/header-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+.hero-title {
+    position: absolute;
+    left: 80px;
+    top: 250px;
+    height: 120px;
+    width: 500px;
+    font-family: 'Merriweather', serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 120px;
+    color: var(--color-white);
+}
+
+.hero-text {
+    position: absolute;
+    top: 380px;
+    left: 80px;
+    height: 120px;
+    width: 470px;
+    color: var(--color-white);
+    line-height: 40px;
+}
+
+.btn {
+    position: absolute;
+    left: 80px;
+    top: 525px;
+    height: 55px;
+    width: 220px;
+    background: var(--color-gold);
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+    transition: color 0.4s;
+}
+
+.btn:hover {
+      color: var(--color-white);
+}
