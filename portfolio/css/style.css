@@ -306,3 +306,35 @@ body {
 .portfolio-img {
     margin-bottom: 25px;
 }
+
+/* ----------Video---------- */
+
+#video {
+    height: 945px;
+    padding: 0 20px;
+    padding-top: 98px;
+}
+
+.video-player {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 705px;
+    background: url(../assets/img/video-player.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.play-hover {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    background: url(../assets/svg/play-hover.svg);
+    border: none;
+    transition: filter 0.6s;
+}
+
+.play-hover:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
