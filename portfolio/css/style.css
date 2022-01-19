@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 html {
     box-sizing: border-box;
@@ -48,10 +49,10 @@ body {
     background-position: center 0;
 }
 
-.header-container {
-    /* position: absolute; */
-    /* height: 90px; */
-}
+/* .header-container {
+    position: absolute;
+    height: 90px;
+} */
 
 .nav ul,
 .switch-lng {
@@ -427,7 +428,7 @@ body {
 /* ----------Contacts---------- */
 
 #contacts {
-    position: relative;
+    /* position: relative; */
     height: 700px;
     background: url(../assets/img/contacts.jpg);
     background-size: auto 700px;
@@ -450,7 +451,6 @@ body {
 
 .contact-title {
     height: 80px;
-    /* margin-top: 60px; */
     margin-bottom: 40px;
     font-family: 'Merriweather', serif;
     font-style: normal;
@@ -572,5 +572,56 @@ input:-webkit-autofill:active {
 }
 
 @media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
 
+    .logo {
+        margin-left: 60px;
+    }
+    
+    .switch-lng {
+        margin-top: -1px;
+    }
+
+    .switch-lng div:last-child {
+        margin-right: 134px;
+        margin-left: 11px;
+    }
+
+    #hero {
+        height: 590px;
+        background-image: url(../assets/img/bg-small.jpg);
+        background-repeat: no-repeat;
+        background-position: center -90px;
+    }
+
+    .header-container .container {
+        background: url(../assets/img/bg-small.jpg);
+        background-repeat: no-repeat;
+        background-position: center 0;
+    }
+
+    .hero-title {
+        padding-top: 49px;
+        margin-left: -20px;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 32px;
+    }
+
+    .hero-text {
+        width: 390px;
+        padding-top: 41px;
+        margin-left: 59px;
+        font-size: 20px;
+        line-height: 24.2px;
+    }
+
+    .btn {
+        width: 219px;
+        height: 54px;
+        margin-top: 54px;
+        margin-left: 59.9px;
+    }
 }
