@@ -27,12 +27,12 @@ body {
 
 .wrapper {
     position: relative;
-    width: 1440px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
 .container {
-    width: 1440px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
@@ -147,7 +147,7 @@ body {
     left: 80px;
     top: 250px;
     height: 120px;
-    width: 500px;
+    max-width: 500px;
     font-family: 'Merriweather', serif;
     font-style: normal;
     font-weight: bold;
@@ -161,7 +161,7 @@ body {
     top: 380px;
     left: 80px;
     height: 120px;
-    width: 470px;
+    max-width: 470px;
     color: var(--color-white);
     line-height: 40px;
 }
@@ -186,7 +186,7 @@ body {
 /* ---------Skills------------ */
 
 #skills {
-    height: 482px;
+    /* height: 482px; */
     margin-bottom: 2px;
     padding: 0 20px;
     padding-top: 100px;
@@ -232,7 +232,7 @@ body {
     flex-direction: column;
     align-items: center;
     height: 240px;
-    width: 320px; 
+    max-width: 320px; 
     margin-right: 40px;
 }
 
@@ -241,7 +241,7 @@ body {
 }
 
 .skills-item h3 {
-    width: 280px;
+    max-width: 280px;
     height: 40px;
     margin-top: 50px;
     font-weight: bold;
@@ -251,7 +251,7 @@ body {
 }
 
 .skills-item p {
-    width: 280px;
+    max-width: 280px;
     height: 72px;
     margin: 21px 20px 10px 20px;
     font-size: 18px;
@@ -263,7 +263,7 @@ body {
 /* ---------Portfolio-------- */
 
 #portfolio {
-    height: 1500px;
+    /* height: 1500px; */
     padding: 0 20px;
     padding-top: 98px;
 }
@@ -301,18 +301,19 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 25px;
 }
 
-.portfolio-img {
+/* .portfolio-img {
     margin-bottom: 25px;
-}
+} */
 
 /* ----------Video---------- */
 
 #video {
-    height: 945px;
+    /* height: 945px; */
     padding: 0 20px;
-    padding-top: 98px;
+    padding-top: 100px;
 }
 
 .video-player {
@@ -342,14 +343,15 @@ body {
 /* ------------Price------------ */
 
 #price {
-    height: 843px;
+    /* height: 843px; */
     padding: 0 20px;
     padding-top: 98px;
+    padding-bottom: 100px;
 }
 
 .price-items {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
 }
@@ -554,4 +556,27 @@ input:-webkit-autofill:active {
 
 .social-list-item:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+@media (max-width: 768px) {
+    #hero {
+        background-image: url(../assets/img/bg-small.jpg);
+        background-size: 100%;
+    }
+
+    .logo {
+        margin-left: 60px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-text {
+        font-size: 20px;
+    }
 }
