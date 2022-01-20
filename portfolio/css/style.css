@@ -282,6 +282,8 @@ body {
     justify-content: center;
     gap: 5px;
     margin-bottom: 60px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .portfolio-btn {
@@ -326,7 +328,7 @@ body {
 }
 
 .video-player {
-    position: relative;
+    /* position: relative; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -334,11 +336,10 @@ body {
     background: url(../assets/img/video-player.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    /* background-size: 100%; */
 }
 
 .play-hover {
-    position: absolute;
+    /* position: absolute; */
     width: 130px;
     height: 130px;
     background: url(../assets/svg/play-hover.svg);
@@ -671,13 +672,13 @@ input:-webkit-autofill:active {
     }
 
     #portfolio h2,
-    #video h2 {
+    #video h2,
+    #price h2 {
         margin-bottom: 50px;
     }
 
     .portfolio-btns {
         width: 445px;
-        margin-left: calc(50% - 222px);
     }
 
     #video {
@@ -693,5 +694,17 @@ input:-webkit-autofill:active {
 
     .play-hover {
         background-size: 50%;
+    }
+
+    #price {
+        padding-top: 80px;
+    }
+
+    .price-item {
+        width: 420px;
+    }
+
+    .price-items {
+        gap: 50px;
     }
 }
