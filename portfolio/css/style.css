@@ -651,8 +651,8 @@ input:-webkit-autofill:active {
 
     .skills-items {
         justify-content: center;
-        row-gap: 34px;
-        column-gap: 45px;
+        row-gap: 35px;
+        column-gap: 44px;
     }
 
     #skills h2 {
@@ -660,6 +660,19 @@ input:-webkit-autofill:active {
     }
 
     .skills-item h3 {
-        margin-top: 30px;
+        margin-top: 29px;
+    }
+
+    #portfolio {
+        padding-top: 115px;
+    }
+
+    #portfolio h2 {
+        margin-bottom: 50px;
+    }
+
+    .portfolio-btns {
+        width: 445px;
+        margin-left: calc(50% - 222px);
     }
 }
