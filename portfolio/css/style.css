@@ -654,6 +654,7 @@ input:-webkit-autofill:active {
     }
 
     .skills-items {
+        margin-left: -4px;
         justify-content: center;
         row-gap: 35px;
         column-gap: 44px;
@@ -698,6 +699,7 @@ input:-webkit-autofill:active {
 
     #price {
         padding-top: 80px;
+        padding-bottom: 80px;
     }
 
     .price-item {
@@ -706,5 +708,52 @@ input:-webkit-autofill:active {
 
     .price-items {
         gap: 50px;
+    }
+
+    #contacts {
+        height: 600px;
+        background: url(../assets/img/contacts-small.jpg);
+        background-size: auto 600px;
+        background-position: center center;
+    }
+
+    .contacts-container {
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 51px;
+    }
+
+    .contact-title {
+        font-size: 32px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 35px;
+    }
+
+    .contact-btn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 15px;
+    }
+
+    .footer-data {
+        width: 210px;
+        height: 40px;
+        justify-content: space-around;
+        padding-left: 6px;
+    }
+
+    .footer-data a {
+        padding-right: 10px;
+    }
+
+    .rs-link {
+        margin-left: 0;
+        margin-bottom: 8px;
     }
 }
