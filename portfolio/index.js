@@ -1,5 +1,4 @@
 (function() {
-    // "use strict";
     let toggles = document.querySelectorAll(".menu-bg");
     let links = document.querySelectorAll(".link");
     let menu = document.querySelector(".menu");
@@ -31,5 +30,7 @@
     }
 }
 )();
+
+console.log("Вёрстка соответствует макету. Ширина экрана 768px +48\nНи на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется: не обрезается и не удаляется +15\nНа ширине экрана 768рх и меньше реализовано адаптивное меню +22");
 
 

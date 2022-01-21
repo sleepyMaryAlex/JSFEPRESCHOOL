@@ -651,7 +651,7 @@ input:-webkit-autofill:active {
     }
 
     .menu {
-        position: absolute;
+        position: fixed;
         display: block;
         right: -620px;
         top: 0;
@@ -671,6 +671,11 @@ input:-webkit-autofill:active {
         font-size: 35px;
         line-height: 73px;
         color: var(--color-white);
+        transition: color 0.4s;
+    }
+
+    .menu nav ul li a:hover {
+        color: var(--color-gold);
     }
 
     .menu nav ul li {
@@ -863,9 +868,70 @@ input:-webkit-autofill:active {
         margin-bottom: 8px;
     }
 
-    @media (max-width: 619px) {
-        .menu {
-            width: 100%;
-        }
+    
+}
+
+@media (max-width: 619px) {
+    .menu {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-title {
+        padding-left: 0;
+    }
+
+    .btn {
+        margin-left: 0;
+    }
+
+    #skills h2,
+    #portfolio h2,
+    #video h2,
+    #price h2 {
+        max-width: 280px;
+    }
+
+    .hero-text {
+        width: 250px;
+        height: 170px;
+        margin: 0;
+        text-align: justify;
+    }
+
+    .logo {
+        margin-left: 20px;
+    }
+
+    .menu-bg {
+        margin-right: 20px;
+    }
+
+    .menu nav ul {
+        margin-left: 100px;
+    }
+
+    .portfolio-btns {
+        width: 300px;
+    }
+
+    .portfolio-img {
+        width: 100%;
+    }
+
+    .contact-input {
+       width: 260px;
+    }
+
+    .contacts-container {
+        width: 300px;
+        align-items: center;
     }
 }
