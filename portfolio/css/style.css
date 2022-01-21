@@ -24,10 +24,10 @@ body {
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
+    overflow-x: hidden;
 }
 
 .wrapper {
-    /* position: relative; */
     max-width: 1440px;
     margin: 0 auto;
 }
@@ -48,11 +48,6 @@ body {
     background-repeat: no-repeat;
     background-position: center 0;
 }
-
-/* .header-container {
-    position: absolute;
-    height: 90px;
-} */
 
 .nav ul,
 .switch-lng {
@@ -106,11 +101,6 @@ body {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
 
-/* .switch-lng {
-    background: transparent;
-    border: none;
-} */
-
 .switch-lng div {
     height: 50px;
     padding-top: 15px;
@@ -137,7 +127,8 @@ body {
     cursor: pointer;
 }
 
-.menu-bg {
+.menu-bg,
+.menu {
     display: none;
 }
 
@@ -151,7 +142,6 @@ body {
 }
 
 .hero-title {
-    /* position: absolute; */
     padding-left: 80px;
     padding-top: 159px;
     height: 120px;
@@ -165,7 +155,6 @@ body {
 }
 
 .hero-text {
-    /* position: absolute; */
     padding-top: 130px;
     margin-left: 80px;
     height: 120px;
@@ -175,7 +164,6 @@ body {
 }
 
 .btn {
-    /* position: absolute; */
     margin-left: 80px;
     margin-top: 145px;
     height: 55px;
@@ -194,7 +182,6 @@ body {
 /* ---------Skills------------ */
 
 #skills {
-    /* height: 482px; */
     margin-bottom: 2px;
     padding: 0 20px;
     padding-top: 10px;
@@ -234,7 +221,6 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 40px;
-    /* height: 242px; */
     padding-bottom: 2px;
 }
 
@@ -244,7 +230,6 @@ body {
     align-items: center;
     height: 240px;
     max-width: 320px; 
-    /* margin-right: 40px; */
 }
 
 .skills-item:last-child {
@@ -274,7 +259,6 @@ body {
 /* ---------Portfolio-------- */
 
 #portfolio {
-    /* height: 1500px; */
     padding: 0 20px;
     padding-top: 98px;
 }
@@ -293,7 +277,6 @@ body {
 .portfolio-btn {
     width: 220px;
     height: 55px;
-    /* margin-right: 5px; */
     background-color: transparent;
     border: 2px solid var(--color-gold);
     color: var(--color-gold);
@@ -319,20 +302,14 @@ body {
     gap: 25px;
 }
 
-/* .portfolio-img {
-    margin-bottom: 25px;
-} */
-
 /* ----------Video---------- */
 
 #video {
-    /* height: 945px; */
     padding: 0 20px;
     padding-top: 100px;
 }
 
 .video-player {
-    /* position: relative; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -343,7 +320,6 @@ body {
 }
 
 .play-hover {
-    /* position: absolute; */
     width: 130px;
     height: 130px;
     background: url(../assets/svg/play-hover.svg);
@@ -360,7 +336,6 @@ body {
 /* ------------Price------------ */
 
 #price {
-    /* height: 843px; */
     padding: 0 20px;
     padding-top: 99px;
     padding-bottom: 100px;
@@ -436,7 +411,6 @@ body {
 /* ----------Contacts---------- */
 
 #contacts {
-    /* position: relative; */
     height: 700px;
     background: url(../assets/img/contacts.jpg);
     background-size: auto 700px;
@@ -444,17 +418,12 @@ body {
 }
 
 .contacts-container {
-    /* position: absolute;
-    top: 60px;
-    left: auto;
-    right: 20px; */
     padding-top: 60px;
     margin-left: auto;
     margin-right: 20px;
     display: flex;
     flex-direction: column;
     width: 450px;
-    /* height: 445px; */
 }
 
 .contact-title {
@@ -596,18 +565,16 @@ input:-webkit-autofill:active {
     .menu-bg {
         display: block;
         position: relative;
-        /* overflow: hidden; */
         width: 50px;
         height: 28px;
         font-size: 0;
         margin-right: 64px;
-        /* text-indent: -9999px; */
-        /* appearance: none; */
         cursor: pointer;
         transition: transform 0.3s;
         border: none;
         box-shadow: none;
         background: transparent;
+        z-index: 2;
     }
 
     .menu-bg:focus {
@@ -617,7 +584,7 @@ input:-webkit-autofill:active {
     .menu-bg span {
         display: block;
         position: absolute;
-        top: 12px;
+        top: 11.5px;
         left: 0;
         right: 0;
         height: 3px;
@@ -635,11 +602,11 @@ input:-webkit-autofill:active {
     }
 
     .menu-bg span::before {
-        top: -13px;
+        top: -12.5px;
     }
 
     .menu-bg span::after {
-        bottom: -13px;
+        bottom: -12.5px;
     }
 
     .bg-anima span::before,
@@ -657,7 +624,7 @@ input:-webkit-autofill:active {
     }
 
     .bg-anima span {
-        transition: background 0s 0.3s;
+        transition: background-color 0s 0.3s;
     }
 
     .bg-anima.is-active span::before {
@@ -673,10 +640,54 @@ input:-webkit-autofill:active {
     .bg-anima.is-active span::before,
     .bg-anima.is-active span::after {
         transition-delay: 0s, 0.3s;
+        width: 120%;
+        height: 2px;
+        right: -5px;
+        top: 2px;
     }
 
     .bg-anima.is-active span {
         background: none;
+    }
+
+    .menu {
+        position: absolute;
+        display: block;
+        right: -620px;
+        top: 0;
+        width: calc(100% - 148px);
+        height: 100%;
+        background-color: var(--color-black);
+        overflow-x: hidden;
+        transition: 0.7s;
+        transition-delay: 0.2s;
+    }
+
+    .menu nav ul li a {
+        text-decoration: none;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 35px;
+        line-height: 73px;
+        color: var(--color-white);
+    }
+
+    .menu nav ul li {
+        margin-bottom: 16px;
+    }
+
+    .menu nav ul {
+        width: 150px;
+        height: 429px;
+        margin-top: 134px;
+        margin-left: 127px;
+    }
+
+    .open {
+        overflow-x: hidden;
+        right: 0;
+        transition-delay: 0.2s;
     }
 
     .switch-lng div:last-child {
@@ -785,7 +796,6 @@ input:-webkit-autofill:active {
     .video-player {
         height: 418px;
         background: url(../assets/img/video-player-small.jpg);
-        /* background-size: 100%; */
         background-repeat: no-repeat;
     }
 
@@ -851,5 +861,11 @@ input:-webkit-autofill:active {
     .rs-link {
         margin-left: 0;
         margin-bottom: 8px;
+    }
+
+    @media (max-width: 619px) {
+        .menu {
+            width: 100%;
+        }
     }
 }
