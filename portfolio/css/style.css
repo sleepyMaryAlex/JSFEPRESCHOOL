@@ -137,6 +137,10 @@ body {
     cursor: pointer;
 }
 
+.menu-bg {
+    display: none;
+}
+
 /* ----------Hero----------- */
 
 #hero {
@@ -585,12 +589,103 @@ input:-webkit-autofill:active {
     }
     
     .switch-lng {
+        margin-left: auto;
         margin-top: -1px;
     }
 
+    .menu-bg {
+        display: block;
+        position: relative;
+        /* overflow: hidden; */
+        width: 50px;
+        height: 28px;
+        font-size: 0;
+        margin-right: 64px;
+        /* text-indent: -9999px; */
+        /* appearance: none; */
+        cursor: pointer;
+        transition: transform 0.3s;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .menu-bg:focus {
+        outline: none;
+    }
+
+    .menu-bg span {
+        display: block;
+        position: absolute;
+        top: 12px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--color-white);
+    }
+
+    .menu-bg span::before,
+    .menu-bg span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: var(--color-white);
+        content: "";
+    }
+
+    .menu-bg span::before {
+        top: -13px;
+    }
+
+    .menu-bg span::after {
+        bottom: -13px;
+    }
+
+    .bg-anima span::before,
+    .bg-anima span::after {
+        transition-duration: 0.3s, 0.3s;
+        transition-delay: 0.3s, 0s;
+    }
+
+    .bg-anima span::before {
+        transition-property: top, transform;
+    }
+
+    .bg-anima span::after {
+        transition-property: bottom, transform;
+    }
+
+    .bg-anima span {
+        transition: background 0s 0.3s;
+    }
+
+    .bg-anima.is-active span::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    .bg-anima.is-active span::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+    }
+
+    .bg-anima.is-active span::before,
+    .bg-anima.is-active span::after {
+        transition-delay: 0s, 0.3s;
+    }
+
+    .bg-anima.is-active span {
+        background: none;
+    }
+
     .switch-lng div:last-child {
-        margin-right: 134px;
         margin-left: 11px;
+        margin-right: 21px;
+    }
+
+    .switch-lng div:nth-child(2) {
+        margin-right: 8px;
     }
 
     #hero {
@@ -690,7 +785,8 @@ input:-webkit-autofill:active {
     .video-player {
         height: 418px;
         background: url(../assets/img/video-player-small.jpg);
-        background-size: 100%;
+        /* background-size: 100%; */
+        background-repeat: no-repeat;
     }
 
     .play-hover {
