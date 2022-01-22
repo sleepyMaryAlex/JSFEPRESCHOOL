@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 html {
     box-sizing: border-box;
@@ -23,16 +24,16 @@ body {
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
+    overflow-x: hidden;
 }
 
 .wrapper {
-    position: relative;
-    width: 1440px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
 .container {
-    width: 1440px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
@@ -43,11 +44,9 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-}
-
-.header-container {
-    position: absolute;
-    height: 90px;
+    background: url(../assets/img/header-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center 0;
 }
 
 .nav ul,
@@ -102,11 +101,6 @@ body {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
 
-.switch-lng {
-    background: transparent;
-    border: none;
-}
-
 .switch-lng div {
     height: 50px;
     padding-top: 15px;
@@ -133,21 +127,25 @@ body {
     cursor: pointer;
 }
 
+.menu-bg,
+.menu {
+    display: none;
+}
+
 /* ----------Hero----------- */
 
 #hero {
     height: 910px;
     background: url(../assets/img/header-bg.jpg);
     background-repeat: no-repeat;
-    background-position: center 0;
+    background-position: center -90px;
 }
 
 .hero-title {
-    position: absolute;
-    left: 80px;
-    top: 250px;
+    padding-left: 80px;
+    padding-top: 159px;
     height: 120px;
-    width: 500px;
+    max-width: 500px;
     font-family: 'Merriweather', serif;
     font-style: normal;
     font-weight: bold;
@@ -157,19 +155,17 @@ body {
 }
 
 .hero-text {
-    position: absolute;
-    top: 380px;
-    left: 80px;
+    padding-top: 130px;
+    margin-left: 80px;
     height: 120px;
-    width: 470px;
+    max-width: 470px;
     color: var(--color-white);
     line-height: 40px;
 }
 
 .btn {
-    position: absolute;
-    left: 80px;
-    top: 525px;
+    margin-left: 80px;
+    margin-top: 145px;
     height: 55px;
     width: 220px;
     background: var(--color-gold);
@@ -186,10 +182,9 @@ body {
 /* ---------Skills------------ */
 
 #skills {
-    height: 482px;
     margin-bottom: 2px;
     padding: 0 20px;
-    padding-top: 100px;
+    padding-top: 10px;
 }
 
 #skills h2,
@@ -223,8 +218,10 @@ body {
 .skills-items {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    height: 242px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px;
+    padding-bottom: 2px;
 }
 
 .skills-item {
@@ -232,8 +229,7 @@ body {
     flex-direction: column;
     align-items: center;
     height: 240px;
-    width: 320px; 
-    margin-right: 40px;
+    max-width: 320px; 
 }
 
 .skills-item:last-child {
@@ -241,7 +237,7 @@ body {
 }
 
 .skills-item h3 {
-    width: 280px;
+    max-width: 280px;
     height: 40px;
     margin-top: 50px;
     font-weight: bold;
@@ -251,7 +247,7 @@ body {
 }
 
 .skills-item p {
-    width: 280px;
+    max-width: 280px;
     height: 72px;
     margin: 21px 20px 10px 20px;
     font-size: 18px;
@@ -263,7 +259,6 @@ body {
 /* ---------Portfolio-------- */
 
 #portfolio {
-    height: 1500px;
     padding: 0 20px;
     padding-top: 98px;
 }
@@ -271,14 +266,17 @@ body {
 .portfolio-btns {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 5px;
     margin-bottom: 60px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .portfolio-btn {
     width: 220px;
     height: 55px;
-    margin-right: 5px;
     background-color: transparent;
     border: 2px solid var(--color-gold);
     color: var(--color-gold);
@@ -300,23 +298,18 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.portfolio-img {
-    margin-bottom: 25px;
+    justify-content: center;
+    gap: 25px;
 }
 
 /* ----------Video---------- */
 
 #video {
-    height: 945px;
     padding: 0 20px;
-    padding-top: 98px;
+    padding-top: 100px;
 }
 
 .video-player {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -327,10 +320,11 @@ body {
 }
 
 .play-hover {
-    position: absolute;
     width: 130px;
     height: 130px;
     background: url(../assets/svg/play-hover.svg);
+    background-repeat: no-repeat;
+    background-position: center;
     border: none;
     transition: filter 0.6s;
 }
@@ -342,16 +336,17 @@ body {
 /* ------------Price------------ */
 
 #price {
-    height: 843px;
     padding: 0 20px;
-    padding-top: 98px;
+    padding-top: 99px;
+    padding-bottom: 100px;
 }
 
 .price-items {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 25px;
 }
 
 .price-item {
@@ -416,7 +411,6 @@ body {
 /* ----------Contacts---------- */
 
 #contacts {
-    position: relative;
     height: 700px;
     background: url(../assets/img/contacts.jpg);
     background-size: auto 700px;
@@ -424,14 +418,12 @@ body {
 }
 
 .contacts-container {
-    position: absolute;
-    top: 60px;
-    left: auto;
-    right: 20px;
+    padding-top: 60px;
+    margin-left: auto;
+    margin-right: 20px;
     display: flex;
     flex-direction: column;
     width: 450px;
-    height: 445px;
 }
 
 .contact-title {
@@ -554,4 +546,393 @@ input:-webkit-autofill:active {
 
 .social-list-item:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+
+    .logo {
+        margin-left: 60px;
+    }
+    
+    .switch-lng {
+        margin-left: auto;
+        margin-top: -1px;
+    }
+
+    .menu-bg {
+        display: block;
+        position: relative;
+        width: 50px;
+        height: 28px;
+        font-size: 0;
+        margin-right: 64px;
+        cursor: pointer;
+        transition: transform 0.3s;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+        z-index: 2;
+    }
+
+    .menu-bg:focus {
+        outline: none;
+    }
+
+    .menu-bg span {
+        display: block;
+        position: absolute;
+        top: 11.5px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--color-white);
+    }
+
+    .menu-bg span::before,
+    .menu-bg span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: var(--color-white);
+        content: "";
+    }
+
+    .menu-bg span::before {
+        top: -12.5px;
+    }
+
+    .menu-bg span::after {
+        bottom: -12.5px;
+    }
+
+    .bg-anima span::before,
+    .bg-anima span::after {
+        transition-duration: 0.3s, 0.3s;
+        transition-delay: 0.3s, 0s;
+    }
+
+    .bg-anima span::before {
+        transition-property: top, transform;
+    }
+
+    .bg-anima span::after {
+        transition-property: bottom, transform;
+    }
+
+    .bg-anima span {
+        transition: background-color 0s 0.3s;
+    }
+
+    .bg-anima.is-active span::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    .bg-anima.is-active span::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+    }
+
+    .bg-anima.is-active span::before,
+    .bg-anima.is-active span::after {
+        transition-delay: 0s, 0.3s;
+        width: 120%;
+        height: 2px;
+        right: -5px;
+        top: 2px;
+    }
+
+    .bg-anima.is-active span {
+        transition: 0s;
+        background: transparent;
+    }
+
+    .menu {
+        position: fixed;
+        display: block;
+        right: -620px;
+        top: 0;
+        width: calc(100% - 148px);
+        height: 100%;
+        background-color: var(--color-black);
+        overflow-x: hidden;
+        transition: 0.7s;
+        transition-delay: 0.2s;
+    }
+
+    .menu nav ul li a {
+        text-decoration: none;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 35px;
+        line-height: 73px;
+        color: var(--color-white);
+        transition: color 0.4s;
+    }
+
+    .menu nav ul li a:hover {
+        color: var(--color-gold);
+    }
+
+    .menu nav ul li {
+        margin-bottom: 16px;
+    }
+
+    .menu nav ul {
+        width: 150px;
+        height: 429px;
+        margin-top: 134px;
+        margin-left: 127px;
+    }
+
+    .open {
+        overflow-x: hidden;
+        right: 0;
+        transition-delay: 0.2s;
+    }
+
+    .switch-lng div:last-child {
+        margin-left: 11px;
+        margin-right: 21px;
+    }
+
+    .switch-lng div:nth-child(2) {
+        margin-right: 8px;
+    }
+
+    #hero {
+        height: 500px;
+        background-image: url(../assets/img/bg-small.jpg);
+        background-repeat: no-repeat;
+        background-position: center -90px;
+    }
+
+    .header-container .container {
+        background: url(../assets/img/bg-small.jpg);
+        background-repeat: no-repeat;
+        background-position: center 0;
+    }
+
+    .hero-title {
+        padding-top: 49px;
+        margin-left: -20px;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 32px;
+    }
+
+    .hero-text {
+        width: 390px;
+        padding-top: 41px;
+        margin-left: 59px;
+        font-size: 20px;
+        line-height: 24.2px;
+    }
+
+    .btn {
+        width: 219px;
+        height: 54px;
+        margin-top: 54px;
+        margin-left: 59.9px;
+    }
+
+    #skills {
+        padding-top: 80px;
+    }
+    
+    #skills h2,
+    #portfolio h2,
+    #video h2,
+    #price h2 { 
+        background: url(../assets/svg/section-title-line-small.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        font-size: 32px;
+    }
+
+    .skills-item p {
+        line-height: 21.78px;
+        width: 280px;
+    }
+
+    .skills-item {
+        width: 300px;
+        height: 224px;
+    }
+
+    .skills-items {
+        margin-left: -4px;
+        justify-content: center;
+        row-gap: 35px;
+        column-gap: 44px;
+    }
+
+    #skills h2 {
+        margin-bottom: 46px;
+    }
+
+    .skills-item h3 {
+        margin-top: 29px;
+    }
+
+    #portfolio {
+        padding-top: 115px;
+    }
+
+    #portfolio h2,
+    #video h2,
+    #price h2 {
+        margin-bottom: 50px;
+    }
+
+    .portfolio-btns {
+        width: 445px;
+    }
+
+    #video {
+        padding: 0;
+        padding-top: 80px;
+    }
+
+    .video-player {
+        height: 418px;
+        background: url(../assets/img/video-player-small.jpg);
+        background-repeat: no-repeat;
+    }
+
+    .play-hover {
+        background-size: 50%;
+    }
+
+    #price {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .price-item {
+        width: 420px;
+    }
+
+    .price-items {
+        gap: 50px;
+    }
+
+    #contacts {
+        height: 600px;
+        background: url(../assets/img/contacts-small.jpg);
+        background-size: auto 600px;
+        background-position: center center;
+    }
+
+    .contacts-container {
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 51px;
+    }
+
+    .contact-title {
+        font-size: 32px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 35px;
+    }
+
+    .contact-btn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 15px;
+    }
+
+    .footer-data {
+        width: 210px;
+        height: 40px;
+        justify-content: space-around;
+        padding-left: 6px;
+    }
+
+    .footer-data a {
+        padding-right: 10px;
+    }
+
+    .rs-link {
+        margin-left: 0;
+        margin-bottom: 8px;
+    }
+
+    
+}
+
+@media (max-width: 619px) {
+    .menu {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-title {
+        padding-left: 0;
+    }
+
+    .btn {
+        margin-left: 0;
+    }
+
+    #skills h2,
+    #portfolio h2,
+    #video h2,
+    #price h2 {
+        max-width: 280px;
+    }
+
+    .hero-text {
+        width: 250px;
+        height: 170px;
+        margin: 0;
+        text-align: justify;
+    }
+
+    .logo {
+        margin-left: 20px;
+    }
+
+    .menu-bg {
+        margin-right: 20px;
+    }
+
+    .menu nav ul {
+        margin-left: 100px;
+    }
+
+    .portfolio-btns {
+        width: 300px;
+    }
+
+    .portfolio-img {
+        width: 100%;
+    }
+
+    .contact-input {
+       width: 260px;
+    }
+
+    .contacts-container {
+        width: 300px;
+        align-items: center;
+    }
 }
