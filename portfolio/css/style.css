@@ -647,7 +647,8 @@ input:-webkit-autofill:active {
     }
 
     .bg-anima.is-active span {
-        background: none;
+        transition: 0s;
+        background: transparent;
     }
 
     .menu {
