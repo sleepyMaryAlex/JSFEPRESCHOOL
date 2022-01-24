@@ -584,7 +584,7 @@ input:-webkit-autofill:active {
     .menu-bg span {
         display: block;
         position: absolute;
-        top: 11.5px;
+        top: 12px;
         left: 0;
         right: 0;
         height: 3px;
@@ -602,11 +602,11 @@ input:-webkit-autofill:active {
     }
 
     .menu-bg span::before {
-        top: -12.5px;
+        top: -12.3px;
     }
 
     .menu-bg span::after {
-        bottom: -12.5px;
+        bottom: -12.4px;
     }
 
     .bg-anima span::before,
@@ -872,7 +872,7 @@ input:-webkit-autofill:active {
     
 }
 
-@media (max-width: 619px) {
+@media (max-width: 620px) {
     .menu {
         width: 100%;
     }
