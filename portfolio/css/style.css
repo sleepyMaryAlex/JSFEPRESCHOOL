@@ -656,7 +656,7 @@ input:-webkit-autofill:active {
         display: block;
         right: -620px;
         top: 0;
-        width: calc(100% - 148px);
+        width: 620px;
         height: 100%;
         background-color: var(--color-black);
         overflow-x: hidden;
