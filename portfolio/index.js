@@ -1,27 +1,27 @@
 (function() {
-    let toggles = document.querySelectorAll(".menu-bg");
+    let bars = document.querySelectorAll(".menu-bg");
     let links = document.querySelectorAll(".link");
     let menu = document.querySelector(".menu");
-    for (let i = 0; i <= toggles.length - 1; i++) {
-      let toggle = toggles[i];
-      toggleHandler(toggle);
+    for (let i = 0; i <= bars.length - 1; i++) {
+      let bar = bars[i];
+      toggleHandler(bar);
     };
-    function toggleHandler(toggle) {
-      toggle.addEventListener("click", function(e) {
+    function toggleHandler(bar) {
+      bar.addEventListener("click", function(e) {
         e.preventDefault();
-        if (toggle.classList.contains("is-active") === true) {
-            toggle.classList.remove("is-active");
+        if (bar.classList.contains("is-active") === true) {
+            bar.classList.remove("is-active");
             menu.classList.remove("open");
         } else {
-            toggle.classList.add("is-active");
+            bar.classList.add("is-active");
             menu.classList.add("open");
         } 
       });
     }
     
     function closeMenu() {
-        for (let toggle of toggles) {
-            toggle.classList.remove("is-active");
+        for (let bar of bars) {
+            bar.classList.remove("is-active");
         }
         menu.classList.remove("open");
     }
