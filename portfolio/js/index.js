@@ -1,3 +1,4 @@
+import i18Obj from './js/translate.js';
 (function () {
   let bars = document.querySelectorAll(".menu-bg");
   let links = document.querySelectorAll(".link");
