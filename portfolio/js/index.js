@@ -57,11 +57,13 @@ console.log("");
 (function() {
   let en = document.querySelector(".en");
   let ru = document.querySelector(".ru");
+  let languages = document.querySelectorAll(".lng");
   let data = document.querySelectorAll("[data-i18]");
   function getTranslate(e) {
     let lang = e.target.textContent;
-    data.forEach((elem) => 
-    elem.textContent = i18Obj[lang][elem.dataset.i18]);
+    data.forEach((elem) => elem.textContent = i18Obj[lang][elem.dataset.i18]);
+    languages.forEach((element) => element.classList.remove("active-lng"));
+    e.target.classList.add("active-lng");
   }
 en.addEventListener("click", getTranslate, false);
 ru.addEventListener("click", getTranslate, false);

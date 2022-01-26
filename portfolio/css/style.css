@@ -118,8 +118,12 @@ body {
 
 .switch-lng div:first-child {
     margin-left: 1px;
-    color: var(--color-gold);
+    /* color: var(--color-gold); */
     cursor: pointer;
+}
+
+.switch-lng .active-lng {
+    color: var(--color-gold);
 }
 
 .switch-lng div:last-child {
