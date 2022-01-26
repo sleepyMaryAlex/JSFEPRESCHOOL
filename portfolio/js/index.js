@@ -1,4 +1,5 @@
-import i18Obj from './js/translate.js';
+import i18Obj from './translate.js';
+
 (function () {
   let bars = document.querySelectorAll(".menu-bg");
   let links = document.querySelectorAll(".link");
@@ -27,13 +28,11 @@ import i18Obj from './js/translate.js';
     menu.classList.remove("open");
   }
   for (let link of links) {
-    link.addEventListener("click", closeMenu);
+    link.addEventListener("click", closeMenu, false);
   }
 })();
 
-console.log(
-  "Вёрстка соответствует макету. Ширина экрана 768px +48\nНи на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется: не обрезается и не удаляется +15\nНа ширине экрана 768рх и меньше реализовано адаптивное меню +22"
-);
+console.log("");
 
 (function () {
   const portfolioBtns = document.querySelector(".portfolio-btns");
@@ -43,7 +42,7 @@ console.log(
       portfolioImages.forEach((img, index) => img.src = `./assets/img/${e.target.dataset.season}/${index + 1}.jpg`);
     }
   }
-  portfolioBtns.addEventListener("click", changeImage);
+  portfolioBtns.addEventListener("click", changeImage, false);
 
   const seasons = ['winter', 'spring', 'summer', 'autumn'];
   function preloadImages() {
@@ -53,4 +52,17 @@ console.log(
     }
   }
   preloadImages();
+})();
+
+(function() {
+  let en = document.querySelector(".en");
+  let ru = document.querySelector(".ru");
+  let data = document.querySelectorAll("[data-i18]");
+  function getTranslate(e) {
+    let lang = e.target.textContent;
+    data.forEach((elem) => 
+    elem.textContent = i18Obj[lang][elem.dataset.i18]);
+  }
+en.addEventListener("click", getTranslate, false);
+ru.addEventListener("click", getTranslate, false);
 })();
