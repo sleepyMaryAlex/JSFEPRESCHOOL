@@ -4,6 +4,8 @@ import i18Obj from './translate.js';
   let bars = document.querySelectorAll(".menu-bg");
   let links = document.querySelectorAll(".link");
   let menu = document.querySelector(".menu");
+  let burger = document.querySelector(".burger");
+  let isActive = document.querySelector(".is-active");
   for (let i = 0; i <= bars.length - 1; i++) {
     let bar = bars[i];
     toggleHandler(bar);
@@ -11,6 +13,7 @@ import i18Obj from './translate.js';
   function toggleHandler(bar) {
     bar.addEventListener("click", function (e) {
       e.preventDefault();
+      burger.style.transitionDelay = "0.3s";
       if (bar.classList.contains("is-active") === true) {
         bar.classList.remove("is-active");
         menu.classList.remove("open");
@@ -95,6 +98,11 @@ ru.addEventListener("click", getTranslate, false);
   let captionsSpan = document.querySelectorAll(".caption-span");
   let contactInputs = document.querySelectorAll(".contact-input");
   let h2 = document.querySelectorAll(".h2");
+  let portfolioBtns = document.querySelectorAll(".portfolio-btn");
+  let links = document.querySelectorAll(".link");
+  let navItems = document.querySelectorAll(".nav-item");
+  let burger = document.querySelector(".burger");
+  let menu = document.querySelector(".menu");
   
   function switchTheme(e) {
     body.classList.toggle("light-theme");
@@ -123,14 +131,27 @@ ru.addEventListener("click", getTranslate, false);
     en.classList.add("active-lng");
    }
    btn.classList.toggle("btn-white");
+   btn.classList.toggle("hover-gold");
    contactBtn.classList.toggle("btn-white");
+   contactBtn.classList.toggle("hover-gold");
    logo.classList.toggle("logo-white");
    caption.classList.toggle("caption-white");
+   menu.classList.toggle("menu-white");
    socialListItems.forEach((item) => item.classList.toggle("logo-white"));
    captionsSpan.forEach((span) => span.classList.toggle("captions-white"));
    contactInputs.forEach((input) => input.classList.toggle("input-white"));
    h2.forEach((elem) => elem.classList.toggle("section-line-white"));
+   portfolioBtns.forEach((btn) => btn.classList.toggle("hover-gold"));
+   navItems.forEach((item) => item.classList.toggle("hover-white"));
+   links.forEach((link) => link.classList.toggle("link-white"));
    
+   if (switchImg.getAttribute("src") === imageSrc1) {
+    burger.classList.remove("burger-white");
+    burger.style.transitionDelay = "0s";
+   } else if (switchImg.getAttribute("src") === imageSrc2) {
+    burger.classList.add("burger-white");
+    burger.style.transitionDelay = "0s";
+   }
   }
   switchImg.addEventListener("click", switchTheme, false);
 })();

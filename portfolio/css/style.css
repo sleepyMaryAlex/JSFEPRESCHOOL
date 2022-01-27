@@ -81,14 +81,18 @@ body {
     padding-bottom: 15px;
 }
 
-.nav ul li a {
+.nav-item {
     text-decoration: none;
     color: inherit;
     transition: color 0.4s;
 }
 
-.nav ul li a:hover {
+.nav-item:hover {
     color: var(--color-gold);
+}
+
+.hover-white:hover {
+    color: var(--color-white);
 }
 
 .nav ul li:first-child {
@@ -502,10 +506,6 @@ body {
     resize: none;
 }
 
-.input-white {
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
 .input-white::placeholder {
     color: var(--color-black);
 }
@@ -514,6 +514,11 @@ body {
 .input-message {
     font-family: inherit;
     color: var(--color-gold);
+}
+
+.input-white {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: var(--color-black);
 }
 
 .contact-btn {
@@ -534,6 +539,10 @@ body {
 
 .contact-btn:hover {
     color: var(--color-white);
+}
+
+.hover-gold:hover {
+    color: var(--color-gold);
 }
 
 input:-webkit-autofill,
@@ -648,31 +657,31 @@ input:-webkit-autofill:active {
         outline: none;
     }
 
-    .menu-bg span {
+    .burger {
         display: block;
         position: absolute;
         top: 12px;
         left: 0;
         right: 0;
         height: 3px;
-        background: var(--color-white);
+        background-color: var(--color-white);
     }
 
-    .menu-bg span::before,
-    .menu-bg span::after {
+    .burger::before,
+    .burger::after {
         display: block;
         position: absolute;
         width: 100%;
         height: 3px;
-        background: var(--color-white);
+        background-color: var(--color-white);
         content: "";
     }
 
-    .menu-bg span::before {
+    .burger::before {
         top: -12.3px;
     }
 
-    .menu-bg span::after {
+    .burger::after {
         bottom: -12.4px;
     }
 
@@ -690,8 +699,9 @@ input:-webkit-autofill:active {
         transition-property: bottom, transform;
     }
 
-    .bg-anima span {
-        transition: background-color 0s 0.3s;
+    .burger {
+        transition: background-color 0s;
+        transition-delay: 0.3s;
     }
 
     .bg-anima.is-active span::before {
@@ -715,7 +725,13 @@ input:-webkit-autofill:active {
 
     .bg-anima.is-active span {
         transition: 0s;
-        background: transparent;
+        background-color: transparent;
+    }
+
+    .burger-white::before,
+    .burger-white::after,
+    .burger-white {
+        background-color: var(--color-black);
     }
 
     .menu {
@@ -731,7 +747,11 @@ input:-webkit-autofill:active {
         transition-delay: 0.2s;
     }
 
-    .menu nav ul li a {
+    .menu-white {
+        background-color: var(--color-white);
+    }
+
+    .link {
         text-decoration: none;
         font-family: Inter;
         font-style: normal;
@@ -742,8 +762,12 @@ input:-webkit-autofill:active {
         transition: color 0.4s;
     }
 
-    .menu nav ul li a:hover {
+    .link:hover {
         color: var(--color-gold);
+    }
+
+    .link-white {
+        color: var(--color-black);
     }
 
     .menu nav ul li {
@@ -933,6 +957,10 @@ input:-webkit-autofill:active {
     .contact-btn {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .footer {
+        height: 190px;
     }
 
     .footer-container {
