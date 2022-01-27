@@ -5,7 +5,6 @@ import i18Obj from './translate.js';
   let links = document.querySelectorAll(".link");
   let menu = document.querySelector(".menu");
   let burger = document.querySelector(".burger");
-  let isActive = document.querySelector(".is-active");
   for (let i = 0; i <= bars.length - 1; i++) {
     let bar = bars[i];
     toggleHandler(bar);
@@ -39,13 +38,31 @@ console.log("");
 
 (function () {
   const portfolioBtns = document.querySelector(".portfolio-btns");
+  const portfolioButtons = document.querySelectorAll(".portfolio-btn");
   const portfolioImages = document.querySelectorAll('.portfolio-img');
+  let switchImg = document.querySelector(".switch-img");
+  let imageSrc1 = "assets/svg/sun.svg";
+  let imageSrc2 = "assets/svg/moon.svg";
   function changeImage(e) {
     if(e.target.classList.contains('portfolio-btn')) {
       portfolioImages.forEach((img, index) => img.src = `./assets/img/${e.target.dataset.season}/${index + 1}.jpg`);
     }
   }
   portfolioBtns.addEventListener("click", changeImage, false);
+
+  function changeBtns(e) {
+    if (e.target.classList.contains('portfolio-btn') && switchImg.getAttribute("src") === imageSrc1) {
+    portfolioButtons.forEach((btn) => btn.classList.remove("portfolio-btn-white"));
+    portfolioButtons.forEach((btn) => btn.classList.remove("portfolio-btns-white"));
+    e.target.classList.add("portfolio-btn-white");
+    } else if (e.target.classList.contains('portfolio-btn') && switchImg.getAttribute("src") === imageSrc2) {
+      portfolioButtons.forEach((btn) => btn.classList.remove("portfolio-btn-black"));
+      portfolioButtons.forEach((btn) => btn.classList.remove("portfolio-btn-white"));
+      e.target.classList.add("portfolio-btn-black");
+    }
+  }
+
+  portfolioBtns.addEventListener("click", changeBtns, false);
 
   const seasons = ['winter', 'spring', 'summer', 'autumn'];
   function preloadImages() {
@@ -109,8 +126,8 @@ ru.addEventListener("click", getTranslate, false);
     hero.classList.toggle("hero-bg");
     containerHeader.classList.toggle("header-light");
     contacts.classList.toggle("contacts-light");
-    let imageSrc1 = "assets/svg/sun.svg"
-    let imageSrc2 = "assets/svg/moon.svg"
+    let imageSrc1 = "assets/svg/sun.svg";
+    let imageSrc2 = "assets/svg/moon.svg";
     if (switchImg.getAttribute("src") === imageSrc1) {
       switchImg.setAttribute("src", imageSrc2);
     } else if (switchImg.getAttribute("src") === imageSrc2) {
@@ -141,10 +158,11 @@ ru.addEventListener("click", getTranslate, false);
    captionsSpan.forEach((span) => span.classList.toggle("captions-white"));
    contactInputs.forEach((input) => input.classList.toggle("input-white"));
    h2.forEach((elem) => elem.classList.toggle("section-line-white"));
-   portfolioBtns.forEach((btn) => btn.classList.toggle("hover-gold"));
+   portfolioBtns.forEach((btn) => btn.classList.toggle("hover-white"));
+   portfolioBtns.forEach((btn) => btn.classList.toggle("portfolio-btn-gold"));
    navItems.forEach((item) => item.classList.toggle("hover-white"));
    links.forEach((link) => link.classList.toggle("link-white"));
-   
+
    if (switchImg.getAttribute("src") === imageSrc1) {
     burger.classList.remove("burger-white");
     burger.style.transitionDelay = "0s";
@@ -152,6 +170,23 @@ ru.addEventListener("click", getTranslate, false);
     burger.classList.add("burger-white");
     burger.style.transitionDelay = "0s";
    }
+
+ 
+    for(let btn of portfolioBtns) {
+        if (switchImg.getAttribute("src") === imageSrc2 && btn.classList.contains("portfolio-btn-white")) {
+            btn.classList.remove("portfolio-btn-white");
+            btn.classList.remove("portfolio-btns-white");
+            btn.classList.add("portfolio-btn-black");
+          } else if (switchImg.getAttribute("src") === imageSrc1 && btn.classList.contains("portfolio-btn-black")) {
+            btn.classList.remove("portfolio-btn-white");
+            btn.classList.remove("portfolio-btn-black");
+            btn.classList.add("portfolio-btns-white");
+          } else if (switchImg.getAttribute("src") === imageSrc2 && btn.classList.contains("portfolio-btns-white")) {
+            btn.classList.remove("portfolio-btns-white");
+            btn.classList.add("portfolio-btn-black");
+          }
+    }
+
   }
   switchImg.addEventListener("click", switchTheme, false);
 })();

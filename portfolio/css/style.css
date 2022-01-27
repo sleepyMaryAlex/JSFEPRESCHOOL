@@ -326,10 +326,25 @@ body {
     transition: color 0.4s;
 }
 
-.portfolio-btn:last-child {
-    margin-right: 0;
+.portfolio-btns-white {
     background-color: var(--color-gold);
     color: var(--color-black);
+}
+
+.portfolio-btn-white {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+}
+
+.portfolio-btn-gold {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+}
+
+.portfolio-btn-black {
+    background-color: var(--color-black);
+    color: var(--color-gold);
+    border: 2px solid var(--color-black);
 }
 
 .portfolio-btn:hover {
@@ -717,9 +732,6 @@ input:-webkit-autofill:active {
     .bg-anima.is-active span::before,
     .bg-anima.is-active span::after {
         transition-delay: 0s, 0.3s;
-        width: 120%;
-        height: 2px;
-        right: -5px;
         top: 2px;
     }
 
