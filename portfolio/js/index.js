@@ -87,6 +87,14 @@ ru.addEventListener("click", getTranslate, false);
   let switchImg = document.querySelector(".switch-img");
   let en = document.querySelector(".en");
   let ru = document.querySelector(".ru");
+  let btn = document.querySelector(".btn");
+  let caption = document.querySelector(".caption");
+  let contactBtn = document.querySelector(".contact-btn");
+  let logo = document.querySelector(".logo");
+  let socialListItems = document.querySelectorAll(".social-list-item");
+  let captionsSpan = document.querySelectorAll(".caption-span");
+  let contactInputs = document.querySelectorAll(".contact-input");
+  let h2 = document.querySelectorAll(".h2");
   
   function switchTheme(e) {
     body.classList.toggle("light-theme");
@@ -114,6 +122,14 @@ ru.addEventListener("click", getTranslate, false);
     en.classList.remove("active-white");
     en.classList.add("active-lng");
    }
+   btn.classList.toggle("btn-white");
+   contactBtn.classList.toggle("btn-white");
+   logo.classList.toggle("logo-white");
+   caption.classList.toggle("caption-white");
+   socialListItems.forEach((item) => item.classList.toggle("logo-white"));
+   captionsSpan.forEach((span) => span.classList.toggle("captions-white"));
+   contactInputs.forEach((input) => input.classList.toggle("input-white"));
+   h2.forEach((elem) => elem.classList.toggle("section-line-white"));
    
   }
   switchImg.addEventListener("click", switchTheme, false);

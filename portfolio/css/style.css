@@ -150,6 +150,11 @@ body {
     margin-left: 38px;
     width: 45px;
     height: 45px;
+    transition: filter 0.6s;
+}
+
+.switch-img:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
 
 .menu-bg,
@@ -217,10 +222,7 @@ body {
     padding-top: 10px;
 }
 
-#skills h2,
-#portfolio h2,
-#video h2,
-#price h2 {
+.h2 {
     height: 80px;
     margin-right: auto;
     margin-left: auto;
@@ -237,12 +239,20 @@ body {
     background-position: center;
 }
 
-#skills h2 span,
-#portfolio h2 span,
-#video h2 span,
-#price h2 span {
+.section-line-white {
+    background: url(../assets/svg/section-title-line-white-theme.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.caption-span {
     padding: 0 20px;
     background-color: var(--color-black);
+}
+
+.captions-white {
+    background-color: var(--color-white);
+    color: var(--color-black);
 }
 
 .skills-items {
@@ -469,6 +479,10 @@ body {
     color: var(--color-gold);
 }
 
+.caption-white {
+    color: var(--color-black);
+}
+
 .contact-input {
     height: 50px;
     margin-bottom: 20px;
@@ -488,6 +502,14 @@ body {
     resize: none;
 }
 
+.input-white {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.input-white::placeholder {
+    color: var(--color-black);
+}
+
 ::placeholder,
 .input-message {
     font-family: inherit;
@@ -504,6 +526,10 @@ body {
     font-weight: 500;
     border: none;
     transition: color 0.4s;
+}
+
+.btn-white {
+    background: var(--color-white);
 }
 
 .contact-btn:hover {
@@ -577,6 +603,10 @@ input:-webkit-autofill:active {
 
 .social-list-item:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.logo-white {
+    filter: invert(100%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
 
 @media (max-width: 768px) {
@@ -794,14 +824,17 @@ input:-webkit-autofill:active {
         padding-top: 80px;
     }
     
-    #skills h2,
-    #portfolio h2,
-    #video h2,
-    #price h2 { 
+    .h2 { 
         background: url(../assets/svg/section-title-line-small.svg);
         background-repeat: no-repeat;
         background-position: center;
         font-size: 32px;
+    }
+
+    .section-line-white {
+        background: url(../assets/svg/section-title-line-white-theme-small.svg);
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
     .skills-item p {
