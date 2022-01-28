@@ -560,7 +560,8 @@ body {
 .hover-gold:hover {
     color: var(--color-gold);
 }
-/* -------------------------- */
+
+/* -------------bubbly-button------------- */
 
 .bubbly-button {
     -webkit-appearance: none;
@@ -656,6 +657,7 @@ body {
   
   
 /* ---------------------------- */
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -850,9 +852,10 @@ input:-webkit-autofill:active {
         width: 620px;
         height: 100%;
         background-color: var(--color-black);
-        overflow-x: hidden;
+        overflow: hidden;
         transition: 0.7s;
         transition-delay: 0.2s;
+        z-index: 1;
     }
 
     .menu-white {
