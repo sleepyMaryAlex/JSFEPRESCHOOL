@@ -190,3 +190,33 @@ ru.addEventListener("click", getTranslate, false);
   }
   switchImg.addEventListener("click", switchTheme, false);
 })();
+
+(function() {
+  function animateButton(e) {
+    let btn = document.querySelector(".btn");
+    let contactBtn = document.querySelector(".contact-btn");
+    let imageSrc1 = "assets/svg/sun.svg";
+    let imageSrc2 = "assets/svg/moon.svg";
+    let switchImg = document.querySelector(".switch-img");
+    if (switchImg.getAttribute("src") === imageSrc2){
+      btn.classList.add("bubbly-white");
+      contactBtn.classList.add("bubbly-white");
+    } else if (switchImg.getAttribute("src") === imageSrc1) {
+      btn.classList.remove("bubbly-white");
+      contactBtn.classList.remove("bubbly-white");
+    }
+    e.preventDefault;
+    e.target.classList.remove('animate');
+    e.target.classList.add('animate');
+    setTimeout(function(){
+      e.target.classList.remove('animate');
+    },700);
+  };
+  
+ let bubblyButtons = document.querySelectorAll(".bubbly-button");
+  
+  for (let bubblyButton of bubblyButtons) {
+    bubblyButton.addEventListener('click', animateButton, false);
+  }
+ 
+})();
