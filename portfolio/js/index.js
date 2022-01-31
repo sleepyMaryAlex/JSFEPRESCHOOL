@@ -127,6 +127,9 @@ let theme;
   let navItems = document.querySelectorAll(".nav-item");
   let burger = document.querySelector(".burger");
   let menu = document.querySelector(".menu");
+  let phoneInput = document.querySelector(".input-phone");
+  let messageInput = document.querySelector(".input-message");
+  let mailInput = document.querySelector(".input-mail");
 
   en.addEventListener("click", getTranslate, false);
   ru.addEventListener("click", getTranslate, false);
@@ -140,6 +143,15 @@ let theme;
     data.forEach(
       (elem) => (elem.textContent = i18Obj[lang][elem.dataset.i18])
     );
+    if (button === ru) {
+      mailInput.placeholder = "Электронная почта";
+      phoneInput.placeholder = "Телефон";
+      messageInput.placeholder = "Сообщение";
+    } else if (button === en) {
+      mailInput.placeholder = "E-mail";
+      phoneInput.placeholder = "Phone";
+      messageInput.placeholder = "Message";
+    } 
     if (body.classList.contains("light-theme")) {
       languages.forEach((element) => element.classList.remove("active-lng"));
       languages.forEach((element) => element.classList.remove("active-white"));
