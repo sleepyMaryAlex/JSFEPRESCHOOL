@@ -125,6 +125,7 @@ body {
     font-weight: bolder;
     font-size: 20px;
     text-transform: uppercase;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .switch-lng div:nth-child(2) {
@@ -385,6 +386,7 @@ body {
     background-position: center;
     border: none;
     transition: filter 0.6s;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .play-hover:hover {
@@ -497,6 +499,8 @@ body {
     font-size: 40px;
     line-height: 80px;
     color: var(--color-gold);
+    line-height: 40px;
+    text-align: center;
 }
 
 .caption-white {
@@ -569,6 +573,7 @@ body {
     position: relative;
     transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
     box-shadow: 0 2px 25px #b39d5b;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .bubbly-button:focus {
@@ -730,6 +735,28 @@ input:-webkit-autofill:active {
     filter: invert(100%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
 
+@media (max-width: 890px) {
+        .switch-img {
+            margin-left: 0px;
+        }
+
+        .nav ul li {
+            margin-right: 15px;
+        }
+
+        .nav ul li:first-child {
+            margin-right: 15px;
+        }
+        
+        .nav ul li:nth-child(2) {
+            margin-right: 15px;
+        }
+        
+        .nav ul li:nth-child(3) {
+            margin-right: 15px;
+        }
+    }
+
 @media (max-width: 768px) {
     .nav {
         display: none;
@@ -763,6 +790,7 @@ input:-webkit-autofill:active {
         box-shadow: none;
         background: transparent;
         z-index: 2;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
 
     .menu-bg:focus {
@@ -1153,6 +1181,11 @@ input:-webkit-autofill:active {
         width: 100%;
     }
 
+    .video-player {
+        height: 235px;
+        background-size: 100%;
+    }
+
     .contact-input {
        width: 260px;
     }
@@ -1160,5 +1193,41 @@ input:-webkit-autofill:active {
     .contacts-container {
         width: 300px;
         align-items: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .video-player {
+        height: 210px;
+    }
+}
+
+@media (max-width: 380px) {
+    .video-player {
+        height: 190px;
+    }
+}
+
+@media (max-width: 340px) {
+    .switch-lng div:last-child {
+        margin-left: 3px;
+        margin-right: 13px;
+    }
+
+    .switch-lng div:nth-child(2) {
+        margin-right: 3px;
+        margin-left: 6px;
+    }
+
+    .menu nav ul {
+        margin-left: 70px;
+    }
+
+    .portfolio-btns {
+        width: 220px;
+    }
+
+    .video-player {
+        height: 180px;
     }
 }
