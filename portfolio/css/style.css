@@ -499,7 +499,6 @@ body {
     font-size: 40px;
     line-height: 80px;
     color: var(--color-gold);
-    line-height: 40px;
     text-align: center;
 }
 
@@ -1183,6 +1182,10 @@ input:-webkit-autofill:active {
     .video-player {
         height: 235px;
         background-size: 100%;
+    }
+
+    .contact-title {
+        line-height: 40px;
     }
 
     .contact-input {
