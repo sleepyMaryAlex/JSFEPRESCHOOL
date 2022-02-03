@@ -130,6 +130,8 @@ let theme;
   let phoneInput = document.querySelector(".input-phone");
   let messageInput = document.querySelector(".input-message");
   let mailInput = document.querySelector(".input-mail");
+  let wrapper = document.querySelector(".wrapper");
+  let contactTitle = document.querySelector(".contact-title");
 
   en.addEventListener("click", getTranslate, false);
   ru.addEventListener("click", getTranslate, false);
@@ -152,6 +154,11 @@ let theme;
       phoneInput.placeholder = "Phone";
       messageInput.placeholder = "Message";
     } 
+    if (button === ru && wrapper.clientWidth <= 480) {
+      contactTitle.classList.add("contact-title-line");
+    } else if (button === en && wrapper.clientWidth <= 480) {
+      contactTitle.classList.remove("contact-title-line");
+    }
     if (body.classList.contains("light-theme")) {
       languages.forEach((element) => element.classList.remove("active-lng"));
       languages.forEach((element) => element.classList.remove("active-white"));
@@ -161,6 +168,17 @@ let theme;
       languages.forEach((element) => element.classList.remove("active-white"));
       button.classList.add("active-white");
       button.classList.add("active-lng");
+    }
+  }
+
+window.addEventListener("resize", alignText);
+
+  function alignText(lang) {
+    let button = lang == 'en' ? en : ru;
+    if (button === ru && wrapper.clientWidth <= 480) {
+      contactTitle.classList.add("contact-title-line");
+    } else if (button === en && wrapper.clientWidth <= 480) {
+      contactTitle.classList.remove("contact-title-line");
     }
   }
 
@@ -304,4 +322,4 @@ let theme;
   }
 })();
 
-console.log("Смена изображений в секции portfolio +25\nПеревод страницы на два языка +25\nПереключение светлой и тёмной темы +25\nДополнительный функционал +10");
+console.log("Вёрстка +10\nКнопка Play/Pause на панели управления +10\nПрогресс-бар отображает прогресс проигрывания видео. +10\nПри перемещении ползунка регулятора громкости звука можно сделать звук громче или тише. +10\nПри клике по кнопке Volume/Mute можно включить или отключить звук. +10\nКнопка Play/Pause в центре видео +10\nДополнительный функционал +10");
