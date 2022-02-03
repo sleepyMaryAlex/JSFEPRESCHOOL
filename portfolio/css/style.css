@@ -368,7 +368,7 @@ body {
     padding-top: 100px;
 }
 
-.video-player {
+/* .video-player {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -391,7 +391,7 @@ body {
 
 .play-hover:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
-}
+} */
 
 /* ------------Price------------ */
 
@@ -1043,7 +1043,7 @@ input:-webkit-autofill:active {
         padding-top: 80px;
     }
 
-    .video-player {
+    /* .video-player {
         height: 418px;
         background: url(../assets/img/video-player-small.jpg);
         background-repeat: no-repeat;
@@ -1051,7 +1051,7 @@ input:-webkit-autofill:active {
 
     .play-hover {
         background-size: 50%;
-    }
+    } */
 
     #price {
         padding-top: 80px;
@@ -1179,10 +1179,10 @@ input:-webkit-autofill:active {
         width: 100%;
     }
 
-    .video-player {
+    /* .video-player {
         height: 235px;
         background-size: 100%;
-    }
+    } */
 
     .contact-title {
         line-height: 40px;
@@ -1198,17 +1198,17 @@ input:-webkit-autofill:active {
     }
 }
 
-@media (max-width: 420px) {
+/* @media (max-width: 420px) {
     .video-player {
         height: 210px;
     }
-}
+} */
 
-@media (max-width: 380px) {
+/* @media (max-width: 380px) {
     .video-player {
         height: 190px;
     }
-}
+} */
 
 @media (max-width: 340px) {
     .switch-lng div:last-child {
@@ -1229,7 +1229,7 @@ input:-webkit-autofill:active {
         width: 220px;
     }
 
-    .video-player {
+    /* .video-player {
         height: 180px;
-    }
+    } */
 }
