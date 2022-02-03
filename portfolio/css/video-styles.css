@@ -2,8 +2,8 @@
     max-width: 1400px;
     box-shadow: 0 0 20px #bdae82;
     position: relative;
-    /* font-size: 0; */
-    /* overflow: hidden; */
+    /* font-size: 0;
+    overflow: hidden; */
 }
   
 .video-player:fullscreen,
@@ -49,12 +49,13 @@
 }
 
 .progress {
-    height: 8px;
+    height: 10px;
     flex: 10;
     position: relative;
     display: flex;
     flex-basis: 100%;
-    transition: height 0.3s;
+    height: 8px;
+    /* transition: height 0.3s; */
     background:rgba(0, 0, 0, 0.9);
     cursor: pointer;
 }
@@ -244,6 +245,10 @@
     margin-bottom: 2px;
     cursor: pointer;
     transition: filter 0.6s;
+}
+
+.fullscreen-img {
+    margin-bottom: 3px;
 }
 
 .player-visible {

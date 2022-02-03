@@ -31,8 +31,6 @@ body {
 .wrapper {
     max-width: 1440px;
     margin: 0 auto;
-    position: relative;
-    overflow-x: hidden;
 }
 
 .container {
@@ -839,12 +837,12 @@ input:-webkit-autofill:active {
     }
 
     .menu {
-        position: absolute;
+        position: fixed;
         display: block;
         right: -620px;
         top: 0;
         width: 620px;
-        height: 700px;
+        height: 100%;
         background-color: var(--color-black);
         overflow: hidden;
         transition: 0.7s;

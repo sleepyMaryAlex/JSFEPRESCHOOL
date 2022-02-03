@@ -11,7 +11,8 @@ const volumeImg = document.querySelector('.volume-img');
 const fill = document.querySelector('.fill');
 const speedRange = document.querySelector('.speed-range');
 const speedFill = document.querySelector('.speed-fill');
-const arrowImg = document.querySelectorAll('.arrow-img');
+const arrowBack = document.querySelector('.arrow-back');
+const arrowForward = document.querySelector('.arrow-forward');
 const fullScreenButton = document.querySelector('.fullscreen-button');
 
 
@@ -24,7 +25,8 @@ volumeRange.addEventListener('input', setVolumeBar);
 volumeImg.addEventListener('click', switchVolume);
 speedRange.addEventListener('input', updateSpeed);
 speedRange.addEventListener('input', setSpeedBar);
-arrowImg.forEach(arrow => arrow.addEventListener('click', makeSkip));
+arrowBack.addEventListener('click', makeSkipBack);
+arrowForward.addEventListener('click', makeSkipForward);
 fullScreenButton.addEventListener('click', goFullScreen);
 
 
@@ -90,8 +92,8 @@ function switchVolume() {
 }
 
 function updateSpeed() {
-  let rate = this.value;
-  video.playbackRate = rate;
+  let speed = this.value;
+  video.playbackRate = speed;
 }
 
 function goFullScreen() {
@@ -100,9 +102,14 @@ function goFullScreen() {
   }
 }
 
-function makeSkip() {
-  let value = Number(this.dataset.skip);
-  video.currentTime = video.currentTime + value;
+function makeSkipBack() {
+  video.currentTime = video.currentTime - 10;
+//   updateProgress();
+}
+
+function makeSkipForward() {
+  video.currentTime = video.currentTime + 10;
+//   updateProgress();
 }
 
 function updateProgress() {
