@@ -28,6 +28,7 @@ speedRange.addEventListener('input', setSpeedBar);
 arrowBack.addEventListener('click', makeSkipBack);
 arrowForward.addEventListener('click', makeSkipForward);
 fullScreenButton.addEventListener('click', goFullScreen);
+window.addEventListener('keydown', skipTime);
 
 
 let progression;
@@ -101,6 +102,14 @@ function goFullScreen() {
   if (video.webkitSupportsFullscreen) {
       video.webkitEnterFullScreen();
   }
+}
+
+function skipTime(e) {
+    if (e.keyCode === 37) {
+        makeSkipBack();
+    } else if (e.keyCode === 39) {
+        makeSkipForward();
+    }
 }
 
 function makeSkipBack() {
