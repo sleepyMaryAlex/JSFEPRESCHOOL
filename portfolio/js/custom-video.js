@@ -50,6 +50,7 @@ let playSrc = "assets/svg/play.svg";
     playImg.setAttribute("src", playSrc);
     playHover.classList.remove("invisible");
     clearInterval(progression);
+    updateProgress();
   };
 }
 
@@ -104,12 +105,12 @@ function goFullScreen() {
 
 function makeSkipBack() {
   video.currentTime = video.currentTime - 10;
-//   updateProgress();
+  updateProgress();
 }
 
 function makeSkipForward() {
   video.currentTime = video.currentTime + 10;
-//   updateProgress();
+  updateProgress();
 }
 
 function updateProgress() {

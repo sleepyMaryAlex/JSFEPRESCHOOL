@@ -84,25 +84,26 @@
 
 .play-img {
     width: 18px;
+    margin-bottom: 3px;
     filter: brightness(0) invert(1);
 }
 
 .volume-button {
     width: 70px; 
-    flex-basis: 20px;
-    flex-shrink: 10;
+    flex-basis: 15px;
+    flex-shrink: 3;
     background: none;
     border: 0;
     text-align: right;
     outline: 0;
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    transition: filter 0.6s;
     cursor: auto;
 }
 
 .volume-img {
     width: 25px;
+    margin-bottom: 3px;
     filter: brightness(0) invert(1);
     cursor: pointer;
 }
@@ -284,7 +285,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 485px) {
   .play-hover-img,
   .play-hover {
       width: 50px;
