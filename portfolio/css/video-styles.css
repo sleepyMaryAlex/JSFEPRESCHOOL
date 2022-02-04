@@ -1,6 +1,8 @@
 .video-player {
-    max-width: 1400px;
-    box-shadow: 0 0 20px #bdae82;
+    max-width: 100%;
+    background-color: transparent;
+    /* height: 202px; */
+    /* box-shadow: 0 0 20px #bdae82; */
     position: relative;
 }
   
@@ -268,12 +270,26 @@
 
   .play-img {
       width: 13px;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
   }
 
   .volume-img {
       width: 20px;
       margin-bottom: 5px;
+  }
+
+  .volume-title {
+      font-size: 13px;
+      margin-top: 3px;
+  }
+
+  .bar {
+    height: 6px;
+  }
+
+  .player-range::-webkit-slider-thumb {
+    width: 10px;
+    height: 10px;
   }
 
   .fullscreen-img,
