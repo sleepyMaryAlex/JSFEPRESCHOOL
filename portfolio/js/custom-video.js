@@ -55,13 +55,14 @@ let playSrc = "assets/svg/play.svg";
 
 function startVideo() {
     playerControls.classList.add("player-visible");
+    video.volume = volumeValue;
     changeMode();
 }
 
 function updateVolume() {
-    let volume = this.value;
-    volumeValue = volume;
-    video.volume = volume;
+    let customVolume = this.value;
+    volumeValue = customVolume;
+    video.volume = customVolume;
   if (video.volume === 0) {
     volumeImg.setAttribute("src", offSrc);
   } else {
