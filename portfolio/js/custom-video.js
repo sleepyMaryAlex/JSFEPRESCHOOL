@@ -50,7 +50,6 @@ let playSrc = "assets/svg/play.svg";
     playImg.setAttribute("src", playSrc);
     playHover.classList.remove("invisible");
     clearInterval(progression);
-    updateProgress();
   };
 }
 
