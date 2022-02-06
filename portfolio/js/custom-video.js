@@ -18,6 +18,7 @@ const fullScreenButton = document.querySelector('.fullscreen-button');
 
 playHover.addEventListener('click', startVideo);
 video.addEventListener('click', startVideo);
+video.addEventListener('mousemove', hidePlayer);
 playButton.addEventListener('click', changeMode);
 progressBar.addEventListener('click', updateCurrentPosition);
 volumeRange.addEventListener('input', updateVolume);
@@ -28,7 +29,7 @@ speedRange.addEventListener('input', setSpeedBar);
 arrowBack.addEventListener('click', makeSkipBack);
 arrowForward.addEventListener('click', makeSkipForward);
 fullScreenButton.addEventListener('click', goFullScreen);
-window.addEventListener('keydown', skipTime);
+document.addEventListener('keydown', skipTime);
 
 
 let progression;
@@ -58,6 +59,16 @@ function startVideo() {
     playerControls.classList.add("player-visible");
     video.volume = volumeValue;
     changeMode();
+}
+
+let timeout;
+
+function hidePlayer() {
+    if (progression > 0) {
+    clearTimeout(timeout);
+    playerControls.classList.add("player-visible");
+    timeout = setTimeout(() => { playerControls.classList.remove("player-visible")}, 7000);
+    }
 }
 
 function updateVolume() {
