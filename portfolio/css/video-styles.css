@@ -46,8 +46,6 @@
 }
   
 .progress-fill {
-    /* flex: 0; */
-    /* flex-basis: 0%; */
     border-radius: 1.3px;
     background: #bdae82;
 }
