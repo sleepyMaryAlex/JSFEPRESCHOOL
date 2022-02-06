@@ -36,6 +36,7 @@ document.addEventListener('touchstart', hidePlayer);
 
 
 let progression;
+let timeout;
 let volumeValue = 0.5;
 let onSrc = "assets/svg/volume.svg";
 let offSrc = "assets/svg/mute.svg";
@@ -62,9 +63,8 @@ function startVideo() {
     playerControls.classList.add("player-visible");
     video.volume = volumeValue;
     changeMode();
+    hidePlayer();
 }
-
-let timeout;
 
 function hidePlayer() {
     if (progression > 0) {
