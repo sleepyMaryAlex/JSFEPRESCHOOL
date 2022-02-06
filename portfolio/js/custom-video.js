@@ -14,6 +14,7 @@ const speedFill = document.querySelector('.speed-fill');
 const arrowBack = document.querySelector('.arrow-back');
 const arrowForward = document.querySelector('.arrow-forward');
 const fullScreenButton = document.querySelector('.fullscreen-button');
+const wrapper = document.querySelector(".wrapper");
 
 
 playHover.addEventListener('click', startVideo);
@@ -30,6 +31,8 @@ arrowBack.addEventListener('click', makeSkipBack);
 arrowForward.addEventListener('click', makeSkipForward);
 fullScreenButton.addEventListener('click', goFullScreen);
 document.addEventListener('keydown', skipTime);
+document.addEventListener('touchmove', hidePlayer);
+document.addEventListener('touchstart', hidePlayer);
 
 
 let progression;
