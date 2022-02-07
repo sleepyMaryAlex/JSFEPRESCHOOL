@@ -126,8 +126,9 @@
                         <video class="video" src="assets/video/video.mp4" poster="assets/img/video-player.jpg"></video>
                         <button class="play-hover"><img class="play-hover-img" src="assets/svg/play-btn.svg" alt="play"></button>
                         <div class="player-controls">
-                            <div class="progress">
-                                <div class="progress-fill"></div>
+                            <div class="progress-wrapper">
+                                <span class="progress-bar"><span class="progress-fill"></span></span>
+                                <input type="range" class="progress-range" min="0" max="100" step="0.05" value="0">
                             </div>
                             <div class="player-wrapper">
                                 <button class="play-button"><img class="play-img" src="assets/svg/play.svg" alt="play"></button>
