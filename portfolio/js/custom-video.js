@@ -14,12 +14,12 @@ const speedFill = document.querySelector('.speed-fill');
 const arrowBack = document.querySelector('.arrow-back');
 const arrowForward = document.querySelector('.arrow-forward');
 const fullScreenButton = document.querySelector('.fullscreen-button');
-const wrapper = document.querySelector(".wrapper");
 
 
 playHover.addEventListener('click', startVideo);
 video.addEventListener('click', startVideo);
-video.addEventListener('mousemove', hidePlayer);
+videoPlayer.addEventListener('mousemove', hidePlayer);
+videoPlayer.addEventListener('click', hidePlayer);
 playButton.addEventListener('click', changeMode);
 progressBar.addEventListener('click', updateCurrentPosition);
 volumeRange.addEventListener('input', updateVolume);
@@ -137,12 +137,11 @@ function makeSkipForward() {
 }
 
 function updateProgress() {
-  let progress = video.currentTime / video.duration;
-  progressFill.style.flexBasis = Math.floor(progress * 1000) / 10 + '%';
+  progressFill.style.width = video.currentTime / video.duration * 100 + '%';
 }
 
 function updateCurrentPosition(e) {
-  let newProgress = (e.clientX - videoPlayer.offsetLeft) / videoPlayer.clientWidth;
-  progressFill.style.flexBasis = Math.floor(newProgress * 1000) / 10 + '%';
-  video.currentTime = newProgress * video.duration;
+  let newPosition = (e.clientX - videoPlayer.offsetLeft) / videoPlayer.clientWidth;
+  progressFill.style.width = newPosition * 100 + '%';
+  video.currentTime = newPosition * video.duration;
 }
