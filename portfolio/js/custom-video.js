@@ -1,7 +1,7 @@
 const videoPlayer = document.querySelector('.video-player');
 const video = document.querySelector('.video');
 const playerControls = document.querySelector('.player-controls');
-const progressBar = document.querySelector('.progress');
+const progressBar = document.querySelector('.progress-bar');
 const progressFill = document.querySelector('.progress-fill');
 const playHover = document.querySelector('.play-hover');
 const playButton = document.querySelector('.play-button');
@@ -10,6 +10,7 @@ const volumeRange = document.querySelector('.volume-range');
 const volumeImg = document.querySelector('.volume-img');
 const fill = document.querySelector('.fill');
 const speedRange = document.querySelector('.speed-range');
+const progressRange = document.querySelector('.progress-range');
 const speedFill = document.querySelector('.speed-fill');
 const arrowBack = document.querySelector('.arrow-back');
 const arrowForward = document.querySelector('.arrow-forward');
@@ -22,7 +23,7 @@ video.addEventListener('ended', endVideo);
 videoPlayer.addEventListener('mousemove', hidePlayer);
 videoPlayer.addEventListener('click', hidePlayer);
 playButton.addEventListener('click', changeMode);
-progressBar.addEventListener('click', updateCurrentPosition);
+progressRange.addEventListener('input', updateCurrentPosition);
 volumeRange.addEventListener('input', updateVolume);
 volumeRange.addEventListener('input', setVolumeBar);
 volumeImg.addEventListener('click', switchVolume);
@@ -139,12 +140,15 @@ function makeSkipForward() {
 
 function updateProgress() {
   progressFill.style.width = video.currentTime / video.duration * 100 + '%';
+  progressRange.value = video.currentTime / video.duration * 100;
 }
 
 function updateCurrentPosition(e) {
-  let newPosition = (e.clientX - videoPlayer.offsetLeft) / videoPlayer.clientWidth;
-  progressFill.style.width = newPosition * 100 + '%';
-  video.currentTime = newPosition * video.duration;
+  let customPosition = this.value;
+  video.currentTime = video.duration * (customPosition / 100);
+  progressRange.value = customPosition;
+  progressFill.style.width = customPosition + '%';
+  
 }
 
 function endVideo() {
