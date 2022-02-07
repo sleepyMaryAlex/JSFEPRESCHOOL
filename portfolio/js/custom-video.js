@@ -18,6 +18,7 @@ const fullScreenButton = document.querySelector('.fullscreen-button');
 
 playHover.addEventListener('click', startVideo);
 video.addEventListener('click', startVideo);
+video.addEventListener('ended', endVideo);
 videoPlayer.addEventListener('mousemove', hidePlayer);
 videoPlayer.addEventListener('click', hidePlayer);
 playButton.addEventListener('click', changeMode);
@@ -40,11 +41,11 @@ let timeout;
 let volumeValue = 0.5;
 let onSrc = "assets/svg/volume.svg";
 let offSrc = "assets/svg/mute.svg";
+let pauseSrc = "assets/svg/pause.svg";
+let playSrc = "assets/svg/play.svg";
 
 
 function changeMode() {
-let pauseSrc = "assets/svg/pause.svg";
-let playSrc = "assets/svg/play.svg";
   if (video.paused) {
     video.play();
     playImg.setAttribute("src", pauseSrc);
@@ -144,4 +145,9 @@ function updateCurrentPosition(e) {
   let newPosition = (e.clientX - videoPlayer.offsetLeft) / videoPlayer.clientWidth;
   progressFill.style.width = newPosition * 100 + '%';
   video.currentTime = newPosition * video.duration;
+}
+
+function endVideo() {
+  playImg.setAttribute("src", playSrc);
+  playHover.classList.remove("invisible");
 }
