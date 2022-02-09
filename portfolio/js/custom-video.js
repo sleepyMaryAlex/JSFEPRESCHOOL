@@ -34,15 +34,15 @@ arrowBack.addEventListener('click', makeSkipBack);
 arrowForward.addEventListener('click', makeSkipForward);
 fullScreenButton.addEventListener('click', function() { 
   if (isFullscreen) {
-    offFullScreen();
+    document.exitFullscreen();
   } else {
-    enterFullScreen();
+    videoPlayer.requestFullscreen();
   }
 });
 document.addEventListener('keydown', skipTime);
 document.addEventListener('touchmove', hidePlayer);
 document.addEventListener('touchstart', hidePlayer);
-
+document.addEventListener("fullscreenchange", changeFullscreen);
 
 let progression;
 let timeout;
@@ -126,14 +126,20 @@ function updateSpeed() {
 
 function enterFullScreen() {
     isFullscreen = true;
-    videoPlayer.requestFullscreen();
     fullScreenImg.setAttribute("src", fullscreenClose);
 }
 
 function offFullScreen() {
     isFullscreen = false;
-    document.exitFullscreen();
     fullScreenImg.setAttribute("src", fullscreenOpen);
+}
+
+function changeFullscreen() {
+  if (fullScreenImg.getAttribute("src") === fullscreenClose) {
+    offFullScreen();
+  } else if (fullScreenImg.getAttribute("src") === fullscreenOpen) { 
+    enterFullScreen();
+  }
 }
 
 function skipTime(e) {
