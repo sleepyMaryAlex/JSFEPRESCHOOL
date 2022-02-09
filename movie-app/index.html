@@ -11,8 +11,25 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <div class="header-container">
+            <div class="slideshow-container">
+                <div class="my-slides">
+                    <img class="slider" src="assets/avengers-helmets-small.jpg" alt="">
+                </div>
+                <div class="my-slides">
+                    <img class="slider" src="assets/harry.jpg" alt="">
+                </div>
+                <div class="my-slides">
+                    <img class="slider" src="assets/twilight.jpg" alt="">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
             </div>
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+            <div class="gif"><img src="assets/title.gif" alt=""></div>
         </header>
         <main>
             <div class="main-container">

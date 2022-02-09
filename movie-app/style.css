@@ -16,20 +16,74 @@ body {
     margin: 0 auto;
 }
 
-.header {
-   max-width: 1440px;
-   height: 550px;
-   background-image: url(assets/avengers-helmets-small.jpg);
-   background-repeat: no-repeat;
+.slider {
+    width: 100%;
 }
 
-.header-container {
-    background-image: url(assets/download.gif);
-    background-repeat: no-repeat;
-    width: 1440px;
-    height: 150px;
+.slideshow-container {
+    max-width: 1440px;
+    position: relative;
+    margin: auto;
+}
+
+.prev,
+.next {
+    cursor: pointer;
     position: absolute;
-    top: 380px;
+    top: 48%;
+    width: auto;
+    padding: 20px;
+    margin-top: -22px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 48px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dots {
+    text-align: center;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot:hover {
+    background-color: #717171;
+} 
+
+.my-slides {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1;}
+}
+
+.gif {
+    width: 100%;
+    margin-left: calc(50% - 384px);
 }
 
 .main-container {
