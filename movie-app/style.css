@@ -1,3 +1,75 @@
 html {
     box-sizing: border-box;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #02131B;
+}
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.header {
+   max-width: 1440px;
+   height: 550px;
+   background-image: url(assets/avengers-helmets-small.jpg);
+   background-repeat: no-repeat;
+}
+
+.header-container {
+    background-image: url(assets/download.gif);
+    background-repeat: no-repeat;
+    width: 1440px;
+    height: 150px;
+    position: absolute;
+    top: 380px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    row-gap: 30px;
+}
+
+.poster {
+    width: 400px;
+    height: 700px;
+    margin: 20px;
+    border: 3px solid #932241;
+    color: #932241;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+    margin: 20px;
+    margin-top: 160px;
+    color: #932241;
+    font-size: 24px;
+}
+
+.footer-data span:first-child {
+    margin-right: 40px;
+}
+
+.rs-img {
+    width: 100px;
+    margin-top: -10px;
+}
+
+.github-link {
+    text-decoration: none;
+    color: #932241;
+}
