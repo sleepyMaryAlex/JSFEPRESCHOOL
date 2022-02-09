@@ -15,6 +15,7 @@ const speedFill = document.querySelector('.speed-fill');
 const arrowBack = document.querySelector('.arrow-back');
 const arrowForward = document.querySelector('.arrow-forward');
 const fullScreenButton = document.querySelector('.fullscreen-button');
+const fullScreenImg = document.querySelector('.fullscreen-img');
 
 
 playHover.addEventListener('click', startVideo);
@@ -31,7 +32,13 @@ speedRange.addEventListener('input', updateSpeed);
 speedRange.addEventListener('input', setSpeedBar);
 arrowBack.addEventListener('click', makeSkipBack);
 arrowForward.addEventListener('click', makeSkipForward);
-fullScreenButton.addEventListener('click', goFullScreen);
+fullScreenButton.addEventListener('click', function() { 
+  if (isFullscreen) {
+    offFullScreen();
+  } else {
+    enterFullScreen();
+  }
+});
 document.addEventListener('keydown', skipTime);
 document.addEventListener('touchmove', hidePlayer);
 document.addEventListener('touchstart', hidePlayer);
@@ -40,10 +47,13 @@ document.addEventListener('touchstart', hidePlayer);
 let progression;
 let timeout;
 let volumeValue = 0.5;
+let isFullscreen = false;
 let onSrc = "assets/svg/volume.svg";
 let offSrc = "assets/svg/mute.svg";
 let pauseSrc = "assets/svg/pause.svg";
 let playSrc = "assets/svg/play.svg";
+let fullscreenOpen = "assets/svg/fullscreen.svg";
+let fullscreenClose = "assets/svg/fullscreen-close.svg";
 
 
 function changeMode() {
@@ -114,10 +124,16 @@ function updateSpeed() {
   video.playbackRate = speed;
 }
 
-function goFullScreen() {
-  if (video.webkitSupportsFullscreen) {
-      video.webkitEnterFullScreen();
-  }
+function enterFullScreen() {
+    isFullscreen = true;
+    videoPlayer.requestFullscreen();
+    fullScreenImg.setAttribute("src", fullscreenClose);
+}
+
+function offFullScreen() {
+    isFullscreen = false;
+    document.exitFullscreen();
+    fullScreenImg.setAttribute("src", fullscreenOpen);
 }
 
 function skipTime(e) {
