@@ -53,6 +53,29 @@ async function getData() {
     divOverview.classList.add("overview");
     div.addEventListener("mouseenter", () => divOverview.classList.add("visible"));
     div.addEventListener("mouseleave", () => divOverview.classList.remove("visible"));
+    let pVote = document.createElement("p");
+    div.append(pVote);
+    if (data.results[i].vote_average.toString().length === 1) {
+     pVote.textContent = `${data.results[i].vote_average}.0`;
+    } else {
+      pVote.textContent = data.results[i].vote_average;
+    }
+    pVote.classList.add("vote");
+    if (data.results[i].vote_average >= 9) {
+      pVote.style.backgroundColor = "#932241";
+    } else if (data.results[i].vote_average >= 8) {
+      pVote.style.backgroundColor = "#267398";
+    } else if (data.results[i].vote_average >= 7) {
+      pVote.style.backgroundColor = "#A6842A";
+    } else if (data.results[i].vote_average >= 6) {
+      pVote.style.backgroundColor = "#27349A";
+    } else if (data.results[i].vote_average >= 5) {
+      pVote.style.backgroundColor = "#000635";
+    } else if (data.results[i].vote_average >= 4) {
+      pVote.style.backgroundColor = "#A66C2A";
+    } else if (data.results[i].vote_average <= 3) {
+      pVote.style.backgroundColor = "#3A2E0F";
+    } 
   }
 }
 
