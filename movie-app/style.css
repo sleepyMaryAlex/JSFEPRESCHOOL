@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap');
+
 html {
     box-sizing: border-box;
 }
@@ -9,6 +11,7 @@ html {
 
 body {
     background-color: #02131B;
+    font-family: 'Trirong', serif;
 }
 
 .wrapper {
@@ -30,7 +33,7 @@ body {
 .next {
     cursor: pointer;
     position: absolute;
-    top: 48%;
+    top: 40%;
     width: auto;
     padding: 20px;
     margin-top: -22px;
@@ -77,30 +80,63 @@ body {
 }
 
 @keyframes fade {
-    from {opacity: 0.4}
+    from {opacity: 0.3}
     to {opacity: 1;}
 }
 
 .gif {
-    width: 100%;
     margin-left: calc(50% - 384px);
 }
 
 .main-container {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-around;
     flex-wrap: wrap;
-    column-gap: 50px;
+    column-gap: 10px;
     row-gap: 30px;
 }
 
 .poster {
-    width: 400px;
-    height: 700px;
+    width: 300px;
+    height: 560px;
     margin: 20px;
-    border: 3px solid #932241;
+    border: 3px solid #bbbbbb;
+    background-color: #1b4558;
+    position: relative;
+    overflow: hidden;
+}
+
+.original-title {
     color: #932241;
+    text-align: center;
+    margin: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0 0 1px #bbbbbb;
+}
+
+.year {
+    text-align: center;
+    color: #bbbbbb;
+    font-weight: 14px;
+}
+
+.overview {
+    visibility: hidden;
+    position: absolute;
+    bottom: -100px;
+    padding: 20px 10px 10px 10px;
+    color: #bbbbbb;
+    background-color: #1b4558;
+    line-height: 22px;
+    transition: bottom 1.4s ease;
+}
+
+.visible {
+    visibility: visible;
+    bottom: 0;
+    transition: bottom 1.4s ease;
 }
 
 .footer {
@@ -121,6 +157,7 @@ body {
 .rs-img {
     width: 100px;
     margin-top: -10px;
+    filter: invert(67%) sepia(0%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
 
 .github-link {
