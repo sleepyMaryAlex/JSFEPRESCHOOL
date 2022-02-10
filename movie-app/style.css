@@ -37,7 +37,7 @@ body {
     width: auto;
     padding: 20px;
     margin-top: -22px;
-    color: #ffffff;
+    color: #bbbbbb;
     font-weight: bold;
     font-size: 48px;
     transition: 0.6s ease;
@@ -88,6 +88,30 @@ body {
     margin-left: calc(50% - 384px);
 }
 
+.input {
+    width: 350px;
+    height: 35px;
+    margin: 5px 40px 40px 40px;
+    margin-left: calc(50% - 195px);
+    padding: 5px 15px;
+    border-radius: 10px;
+    background-color: #bbbbbb;
+    color: #02131B;
+    font-size: 18px;
+    outline: none;
+    border: none
+}
+
+input:focus {
+    box-shadow:  2px 2px 3px #717171, -2px -2px 3px #717171;
+}
+
+.input::placeholder {
+    font-family: 'Trirong', serif;
+    font-size: 18px;
+    color: #02131B;
+}
+
 .main-container {
     display: flex;
     flex-direction: row;
@@ -112,7 +136,7 @@ body {
     text-align: center;
     margin: 5px;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: bolder;
     text-shadow: 0 0 1px #bbbbbb;
 }
 
@@ -125,12 +149,12 @@ body {
 .overview {
     visibility: hidden;
     position: absolute;
-    bottom: -100px;
+    bottom: -160px;
     padding: 20px 10px 10px 10px;
     color: #bbbbbb;
     background-color: #1b4558;
     line-height: 22px;
-    transition: bottom 1.4s ease;
+    transition: all 1s ease;
 }
 
 .visible {
@@ -144,9 +168,25 @@ body {
     top: 5px;
     right: 5px;
     padding: 5px;
-    /* background-color: #bbbbbb; */
     border-radius: 10px;
     color: #bbbbbb;
+}
+
+.message {
+    color: #bbbbbb;
+    font-size: 18px;
+}
+
+.input-wrapper {
+    position: relative;
+} 
+
+.cancel {
+    width: 20px;
+    position: absolute;
+    top: 18px;
+    left: 60%;
+    cursor: pointer;
 }
 
 .footer {
@@ -160,8 +200,8 @@ body {
     font-size: 24px;
 }
 
-.footer-data span:first-child {
-    margin-right: 40px;
+.footer-data span:nth-child(2) {
+    margin: 0 40px;
 }
 
 .rs-img {
