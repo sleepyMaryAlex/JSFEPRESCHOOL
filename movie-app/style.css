@@ -112,6 +112,13 @@ input:focus {
     color: #02131B;
 }
 
+.caption {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #bbbbbb;
+}
+
 .main-container {
     display: flex;
     flex-direction: row;
@@ -190,6 +197,32 @@ input:focus {
     left: 90%;
     cursor: pointer;
 }
+
+.flipping {
+    margin-top: 40px; 
+    margin-left: calc(50% - 60px);
+}
+
+.next-page,
+.prev-page {
+    padding: 10px;
+    background-color: #bbbbbb;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    color: #02131B;
+}
+
+.next-page:hover,
+.prev-page:hover {
+    background-color: #717171;
+}
+
+.page-number {
+    color: #bbbbbb;
+    margin: 0 20px;
+    font-size: 18px;
+} 
 
 .footer {
     display: flex;

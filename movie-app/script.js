@@ -26,16 +26,43 @@ function showSlides(n) {
 // ==================================
 
 let DEFAULT_URL =
-  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=aa2ce8765d07b86eafdaaf3467fd8307";
+  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=aa2ce8765d07b86eafdaaf3467fd8307&page=1";
 
-let mainContainer = document.querySelector(".main-container");
-let input = document.querySelector(".input");
-let cancel = document.querySelector(".cancel");
+const mainContainer = document.querySelector(".main-container");
+const input = document.querySelector(".input");
+const cancel = document.querySelector(".cancel");
+const wrapper = document.querySelector(".wrapper");
+const slider1 = document.querySelector(".slider-1");
+const slider2 = document.querySelector(".slider-2");
+const slider3 = document.querySelector(".slider-3");
+const prevPage = document.querySelector(".prev-page");
+const nextPage = document.querySelector(".next-page");
+const pageNumber = document.querySelector(".page-number");
+const caption = document.querySelector(".caption");
+
+
+let num = 1;
+let maxNum;
+let pageUrl;
 let inputValue;
+
+
+document.addEventListener("keydown", check);
+cancel.addEventListener("click", clearInput);
+input.addEventListener("input", changeImg);
+window.addEventListener("resize", changeSliders);
+prevPage.addEventListener("click", function() {
+  if (num >= 2) {showPrevPage()}});
+nextPage.addEventListener("click", function() {
+  if (num < maxNum) {showNextPage()}});
 
 async function getData(url) {
   const res = await fetch(url);
   const data = await res.json();
+  if (caption.textContent === "Found movies") {
+    caption.textContent = `Found ${data.total_results} movies`;
+  }
+  maxNum = data.total_pages;
   if (data.results.length === 0) {
     showMessage();
   } else {
@@ -45,10 +72,14 @@ async function getData(url) {
       div.classList.add("poster");
       let img = document.createElement("img");
       div.append(img);
-      img.setAttribute(
-        "src",
-        `https://image.tmdb.org/t/p/w300${data.results[i].poster_path}`
-      );
+      if (data.results[i].poster_path === null) {
+        img.setAttribute("src", "assets/replace-img.jpg");
+      } else {
+        img.setAttribute(
+          "src",
+          `https://image.tmdb.org/t/p/w300${data.results[i].poster_path}`
+        );
+      }
       let p = document.createElement("p");
       div.append(p);
       p.textContent = data.results[i].title;
@@ -95,9 +126,6 @@ async function getData(url) {
 }
 getData(DEFAULT_URL);
 
-document.addEventListener("keydown", check);
-cancel.addEventListener("click", clearInput);
-input.addEventListener("input", changeImg);
 
 function check(e) {
   if (e.keyCode === 13) {
@@ -126,18 +154,14 @@ function showMessage() {
 function searchMovie() {
   mainContainer.innerHTML = "";
   inputValue = input.value;
-  if (inputValue === "") {
+  caption.textContent = "Found movies";
+  if (inputValue === ""){
     showMessage();
   }
-  searchUrl = `https://api.themoviedb.org/3/search/movie?query=${inputValue}&api_key=aa2ce8765d07b86eafdaaf3467fd8307`;
+  let searchUrl = `https://api.themoviedb.org/3/search/movie?query=${inputValue}&api_key=aa2ce8765d07b86eafdaaf3467fd8307`;
   getData(searchUrl);
+  updatePage();
 }
-
-let wrapper = document.querySelector(".wrapper");
-let slider1 = document.querySelector(".slider-1");
-let slider2 = document.querySelector(".slider-2");
-let slider3 = document.querySelector(".slider-3");
-window.addEventListener("resize", changeSliders);
 
 function changeSliders() {
   if (wrapper.clientWidth <= 790) {
@@ -154,4 +178,42 @@ function changeSliders() {
 changeSliders();
 
 
-// https://api.themoviedb.org/3/search/movie?query=hello&api_key=aa2ce8765d07b86eafdaaf3467fd8307"`
+function showNextPage() {
+  num = num + 1;
+  pageNumber.textContent = num;
+  mainContainer.innerHTML = "";
+  if (caption.textContent === "Popular movies") {
+    pageUrl = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=aa2ce8765d07b86eafdaaf3467fd8307&page=${num}`;
+    getData(pageUrl);
+  } else  {
+    pageUrl = `https://api.themoviedb.org/3/search/movie?query=${inputValue}&api_key=aa2ce8765d07b86eafdaaf3467fd8307&page=${num}`;
+    getData(pageUrl);
+  }
+}
+
+function showPrevPage() {
+  num = num - 1;
+  pageNumber.textContent = num;
+  mainContainer.innerHTML = "";
+  if (caption.textContent === "Popular movies") {
+    pageUrl = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=aa2ce8765d07b86eafdaaf3467fd8307&page=${num}`;
+    getData(pageUrl);
+  } else {
+    pageUrl = `https://api.themoviedb.org/3/search/movie?query=${inputValue}&api_key=aa2ce8765d07b86eafdaaf3467fd8307&page=${num}`;
+    getData(pageUrl);
+  }
+}
+
+function updatePage() {
+  num = 1;
+  pageNumber.textContent = 1;
+  if (caption.textContent === "Popular movies") {
+    pageUrl = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=aa2ce8765d07b86eafdaaf3467fd8307&page=${num}`;
+    getData(pageUrl);
+  } else {
+    pageUrl = `https://api.themoviedb.org/3/search/movie?query=${inputValue}&api_key=aa2ce8765d07b86eafdaaf3467fd8307&page=${num}`;
+    getData(pageUrl);
+  }
+}
+
+// https://api.themoviedb.org/3/search/movie?query=bye&api_key=aa2ce8765d07b86eafdaaf3467fd8307
