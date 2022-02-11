@@ -98,6 +98,7 @@ getData(DEFAULT_URL);
 document.addEventListener("keydown", check);
 cancel.addEventListener("click", clearInput);
 input.addEventListener("input", changeImg);
+
 function check(e) {
   if (e.keyCode === 13) {
     searchMovie();
@@ -131,5 +132,26 @@ function searchMovie() {
   searchUrl = `https://api.themoviedb.org/3/search/movie?query=${inputValue}&api_key=aa2ce8765d07b86eafdaaf3467fd8307`;
   getData(searchUrl);
 }
+
+let wrapper = document.querySelector(".wrapper");
+let slider1 = document.querySelector(".slider-1");
+let slider2 = document.querySelector(".slider-2");
+let slider3 = document.querySelector(".slider-3");
+window.addEventListener("resize", changeSliders);
+
+function changeSliders() {
+  if (wrapper.clientWidth <= 790) {
+    slider1.setAttribute("src", "assets/avengers-small.jpg")
+    slider2.setAttribute("src", "assets/harry-small.jpg")
+    slider3.setAttribute("src", "assets/twilight-small.jpg")
+  } else {
+    slider1.setAttribute("src", "assets/avengers.jpg")
+    slider2.setAttribute("src", "assets/harry.jpg")
+    slider3.setAttribute("src", "assets/twilight.jpg")
+  }
+}
+
+changeSliders();
+
 
 // https://api.themoviedb.org/3/search/movie?query=hello&api_key=aa2ce8765d07b86eafdaaf3467fd8307"`

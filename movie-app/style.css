@@ -33,7 +33,7 @@ body {
 .next {
     cursor: pointer;
     position: absolute;
-    top: 40%;
+    top: calc(50% - 40px);
     width: auto;
     padding: 20px;
     margin-top: -22px;
@@ -179,13 +179,15 @@ input:focus {
 
 .input-wrapper {
     position: relative;
+    width: 350px;
+    margin-left: calc(50% - 170px);
 } 
 
 .cancel {
     width: 20px;
     position: absolute;
     top: 18px;
-    left: 60%;
+    left: 90%;
     cursor: pointer;
 }
 
@@ -193,11 +195,15 @@ input:focus {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 100px;
+    height: 150px;
     margin: 20px;
-    margin-top: 160px;
+    margin-top: 100px;
     color: #932241;
     font-size: 24px;
+}
+
+.footer-data {
+    padding-top: 50px;
 }
 
 .footer-data span:nth-child(2) {
@@ -206,11 +212,21 @@ input:focus {
 
 .rs-img {
     width: 100px;
-    margin-top: -10px;
+    padding-top: 50px;
     filter: invert(67%) sepia(0%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
 
 .github-link {
     text-decoration: none;
     color: #932241;
+}
+
+@media (max-width: 790px) {
+    .gif-img {
+        width: 400px;
+    }
+
+    .gif {
+        margin-left: calc(50% - 200px);
+    }
 }
