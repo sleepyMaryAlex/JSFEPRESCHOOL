@@ -12,6 +12,7 @@ function currentSlide(n) {
 
 function showSlides(n) {
   let mySlides = document.querySelectorAll(".my-slides");
+  let dots = document.querySelectorAll(".dot");
   if (n > mySlides.length) {
     slideIndex = 1;
   }
@@ -20,8 +21,10 @@ function showSlides(n) {
   }
   for (let i = 0; i < mySlides.length; i++) {
     mySlides[i].style.display = "none";
+    dots[i].style.backgroundColor = "#bbbbbb";
   }
   mySlides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].style.backgroundColor = "#717171";
 }
 showSlides(slideIndex);
 
