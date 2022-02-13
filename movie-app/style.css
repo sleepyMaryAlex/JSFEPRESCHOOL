@@ -71,10 +71,6 @@ body {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.dot:hover {
-    background-color: #717171;
-} 
-
 .my-slides {
     animation-name: fade;
     animation-duration: 1.5s;
@@ -115,7 +111,7 @@ input:focus {
 
 .caption {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
     font-size: 23px;
     color: #bbbbbb;
     text-shadow: 2px 2px 3px #932241, -2px -2px 3px #932241;
@@ -132,7 +128,7 @@ input:focus {
 
 .poster {
     width: 300px;
-    height: 565px;
+    height: 571px;
     margin: 20px;
     border-radius: 5px;
     background-color: #1b4558;
@@ -208,7 +204,7 @@ input:focus {
     width: 20px;
     position: absolute;
     top: 18px;
-    left: 90%;
+    left: 93%;
     cursor: auto;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -269,6 +265,10 @@ input:focus {
 
 .rs-img:hover {
     filter: invert(40%) sepia(0%) saturate(638%) hue-rotate(510deg) brightness(92%) contrast(87%);
+}
+
+.rs-link {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .github-link {
