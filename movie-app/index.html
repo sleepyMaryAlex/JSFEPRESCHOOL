@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/icon.ico">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="slideshow-container">
+                <div class="my-slides">
+                    <img class="slider slider-1" src="assets/avengers.jpg" alt="slider">
+                </div>
+                <div class="my-slides">
+                    <img class="slider slider-2" src="assets/harry.jpg" alt="slider">
+                </div>
+                <div class="my-slides">
+                    <img class="slider slider-3" src="assets/twilight.jpg" alt="slider">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+            </div>
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+            <div class="gif"><img class="gif-img" src="assets/title.gif" alt="gif"></div>
+        </header>
+        <main>
+            <div class="input-wrapper">
+                <img class="cancel" src="assets/search.svg" alt="cancel">
+                <input class="input" type="text" placeholder="search" autocomplete="off" autofocus>
+            </div>
+
+            <p class="caption">Popular movies</p>
+            <div class="main-container"></div>
+            <div class="flipping">
+                <button class="prev-page">❮</button>
+                <span class="page-number">1</span>
+                <button class="next-page">❯</button>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer-data">
+                <span>&#169;</span>
+                <span>2022</span>
+                <a class="github-link" href="https://github.com/sleepyMaryAlex" target="_blank">github</a>
+            </div>
+            <a href="https://rs.school/js-stage0/" target="_blank"><img class="rs-img" src="assets/rs_school_js.svg"
+                    alt="logo"></a>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
