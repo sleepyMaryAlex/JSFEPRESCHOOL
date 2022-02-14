@@ -211,7 +211,10 @@ input:focus {
 
 .flipping {
     margin-top: 40px; 
-    margin-left: calc(50% - 60px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .next-page,
@@ -230,11 +233,21 @@ input:focus {
     background-color: #717171;
 }
 
-.page-number {
+.page-number,
+.span,
+.max-page-number {
     color: #bbbbbb;
-    margin: 0 20px;
+    margin: 0 0 0 20px;
     font-size: 18px;
 } 
+
+.span {
+    margin: 0 4px 0 4px;
+}
+
+.max-page-number {
+    margin: 0 20px 0 0;
+}
 
 .footer {
     display: flex;

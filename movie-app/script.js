@@ -30,8 +30,7 @@ showSlides(slideIndex);
 
 // ================ API ==================
 
-let DEFAULT_URL =
-  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=aa2ce8765d07b86eafdaaf3467fd8307&page=1";
+let DEFAULT_URL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=aa2ce8765d07b86eafdaaf3467fd8307&page=1";
 
 const mainContainer = document.querySelector(".main-container");
 const input = document.querySelector(".input");
@@ -44,6 +43,7 @@ const prevPage = document.querySelector(".prev-page");
 const nextPage = document.querySelector(".next-page");
 const pageNumber = document.querySelector(".page-number");
 const caption = document.querySelector(".caption");
+const maxPageNumber = document.querySelector(".max-page-number");
 
 let num = 1;
 let maxNum;
@@ -65,16 +65,18 @@ nextPage.addEventListener("click", function () {
   }
 });
 
+
 async function getData(url) {
   const res = await fetch(url);
   const data = await res.json();
-  showMessage(data);
-  maxNum = data.total_pages;
   showData(data);
 }
 getData(DEFAULT_URL);
 
 function showData(data) {
+  showMessage(data);
+  maxNum = data.total_pages;
+  maxPageNumber.textContent = maxNum;
   for (let i = 0; i < data.results.length; i++) {
     let posterPath = data.results[i].poster_path;
     let voteAverage = data.results[i].vote_average;
@@ -229,4 +231,4 @@ function updatePage() {
 }
 
 
-console.log("Верстка +10\nПри загрузке приложения на странице отображаются карточки фильмов с полученными от API данными +10\nЕсли в поле поиска ввести слово и отправить поисковый запрос, на странице отобразятся карточки фильмов, в названиях которых есть это слово, если такие данные предоставляет API +10\nПоиск +30\nДополнительный функционал +10\nДобавлено:\n1. Наличие на карточке фильма его описания и рейтинга\n2. Возможность перехода на следующую и предыдущую страницы");
+console.log("Верстка +10\nПри загрузке приложения на странице отображаются карточки фильмов с полученными от API данными +10\nЕсли в поле поиска ввести слово и отправить поисковый запрос, на странице отобразятся карточки фильмов, в названиях которых есть это слово, если такие данные предоставляет API +10\nПоиск +30\nДополнительный функционал +10\nДобавлено:\n1. Наличие на карточке фильма его описания и рейтинга\n2. Возможность перехода на следующую и предыдущую страницы\nБуду благодарна за найденные баги!");
