@@ -106,6 +106,7 @@ body {
 
 .current-game {
     display: none;
+    flex-direction: column;
     width: 28%;
     margin: 0 20px;
 }
@@ -205,7 +206,7 @@ body {
 }
 
 .cards-active {
-    box-shadow: 3px 3px 5px #826e42, -3px -3px 5px #826e42;
+    box-shadow: 4px 4px 10px #826e42, -4px -4px 10px #826e42;
 }
 
 .disney-cards p,
@@ -241,6 +242,10 @@ body {
 
 .visible {
     display: flex;
+}
+
+.invisible {
+    display: none;
 }
 
 .time-visible {

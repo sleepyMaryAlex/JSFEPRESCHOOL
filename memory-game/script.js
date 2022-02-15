@@ -95,18 +95,52 @@ function add() {
 function timer() {
     t = setTimeout(add, 1000); 
 }
-timer();
+
 
 const disneyCards = document.querySelector(".disney-cards");
 const actorsCards = document.querySelector(".actors-cards");
 const scienceCards = document.querySelector(".science-cards");
+const play = document.querySelector(".play");
+const currentGame = document.querySelector(".current-game");
+const memoryGame = document.querySelector(".memory-game");
+const rules = document.querySelector(".rules");
+const main = document.querySelector(".main");
+const setsOfCards = document.querySelector(".sets-of-cards");
 const sets = document.querySelectorAll(".set");
+const frontFace = document.querySelectorAll(".front-face");
 
 disneyCards.addEventListener("click", chooseSet);
 actorsCards.addEventListener("click", chooseSet);
 scienceCards.addEventListener("click", chooseSet);
+play.addEventListener("click", startGame);
 
 function chooseSet() {
     sets.forEach(set => set.classList.remove("cards-active"));
     this.classList.add("cards-active");
+}
+
+function startGame() {
+    if (disneyCards.classList.contains("cards-active") || actorsCards.classList.contains("cards-active") || scienceCards.classList.contains("cards-active")) {
+        setsOfCards.classList.add("invisible");
+        play.classList.add("invisible");
+        currentGame.classList.add("visible");
+        memoryGame.classList.add("visible");
+        rules.classList.add("rules-after");
+        main.classList.add("main-after");
+        timer();
+        replaceCards();
+    }
+}
+
+function replaceCards() {
+    if (disneyCards.classList.contains("cards-active")) {
+        let src = ["assets/card-set/lion.jpg", "assets/card-set/lion.jpg", "assets/card-set/moana.jpg", "assets/card-set/moana.jpg", "assets/card-set/zootopia.jpg", "assets/card-set/zootopia.jpg", "assets/card-set/soul.jpg", "assets/card-set/soul.jpg", "assets/card-set/disney.jpg", "assets/card-set/disney.jpg", "assets/card-set/beauty.jpg", "assets/card-set/beauty.jpg"];
+        frontFace.forEach((card, index) => card.setAttribute("src", src[index]));
+    } else if (actorsCards.classList.contains("cards-active")) {
+        let src = ["assets/card-set/emma.jpg", "assets/card-set/emma.jpg", "assets/card-set/robert.jpg", "assets/card-set/robert.jpg", "assets/card-set/benedict.jpg", "assets/card-set/benedict.jpg", "assets/card-set/fanning.jpg", "assets/card-set/fanning.jpg", "assets/card-set/kira.jpg", "assets/card-set/kira.jpg", "assets/card-set/dwayne.jpg", "assets/card-set/dwayne.jpg"];
+        frontFace.forEach((card, index) => card.setAttribute("src", src[index]));
+    } else if (scienceCards.classList.contains("cards-active")) {
+        let src = ["assets/card-set/science1.jpg", "assets/card-set/science1.jpg", "assets/card-set/science2.jpg", "assets/card-set/science2.jpg", "assets/card-set/science3.jpg", "assets/card-set/science3.jpg", "assets/card-set/science4.jpg", "assets/card-set/science4.jpg", "assets/card-set/science5.jpg", "assets/card-set/science5.jpg", "assets/card-set/science6.jpg", "assets/card-set/science6.jpg"];
+        frontFace.forEach((card, index) => card.setAttribute("src", src[index]));
+    }
 }
