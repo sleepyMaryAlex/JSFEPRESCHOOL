@@ -96,3 +96,17 @@ function timer() {
     t = setTimeout(add, 1000); 
 }
 timer();
+
+const disneyCards = document.querySelector(".disney-cards");
+const actorsCards = document.querySelector(".actors-cards");
+const scienceCards = document.querySelector(".science-cards");
+const sets = document.querySelectorAll(".set");
+
+disneyCards.addEventListener("click", chooseSet);
+actorsCards.addEventListener("click", chooseSet);
+scienceCards.addEventListener("click", chooseSet);
+
+function chooseSet() {
+    sets.forEach(set => set.classList.remove("cards-active"));
+    this.classList.add("cards-active");
+}

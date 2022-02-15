@@ -31,24 +31,28 @@ body {
 
 .memory-game {
     width: 33%;
-    height: 72vh;
+    height: 70vh;
     margin: 0 10px;
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-wrap: wrap;
     perspective: 1000px;
 }
 
 .main {
+    margin-top: 30px;
+}
+
+.main-after {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 30px;
 }
 
 .memory-card {
     position: relative;
     width: calc(25% - 10px);
-    height: calc(33% - 10px);
+    height: calc(25% - 10px);
     margin: 5px;
     transform: scale(1);
     transform-style: preserve-3d;
@@ -82,13 +86,17 @@ body {
 }
 
 .rules {
-    width: 28%;
     margin: 0 20px;
 }
 
-.rules h2 {
+.rules-after {
+    width: 28%;
     margin-top: 130px;
-    margin-bottom: 20px;
+}
+
+.rules h2 {
+    margin-bottom: 10px;
+    text-align: center;
     text-shadow: 1px 1px 3px #8E83AC, -2px -2px 1px #8E83AC;
 }
 
@@ -97,6 +105,7 @@ body {
 }
 
 .current-game {
+    display: none;
     width: 28%;
     margin: 0 20px;
 }
@@ -155,6 +164,87 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     font-weight: 500;
+}
+
+.sets-of-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sets-of-cards h2 {
+    margin: 0 20px;
+    margin-top: 30px;
+    text-shadow: 2px 2px 6px #8E83AC, -2px -2px 1px #8E83AC;
+}
+
+.disney-cards img,
+.actors-cards img,
+.science-cards img {
+    width: 80px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.disney-cards,
+.actors-cards,
+.science-cards {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    border: 2px solid #515415;
+    padding: 5px;
+    border-radius: 5px;
+    transform: scale(1);
+}
+
+.disney-cards:hover,
+.actors-cards:hover,
+.science-cards:hover {
+    transform: scale(1.03);
+}
+
+.cards-active {
+    box-shadow: 3px 3px 5px #826e42, -3px -3px 5px #826e42;
+}
+
+.disney-cards p,
+.actors-cards p,
+.science-cards p {
+    padding: 25px;
+}
+
+.play {
+    width: 170px;
+    height: 50px;
+    margin: 25px;
+    font-family: inherit;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #7e8142;
+    color: #3d3259;
+    transform: scale(1);
+    transition: color 0.6s;
+}
+
+.play:active {
+    transform: scale(0.96);
+}
+
+.play:hover {
+    color: #1c103a;
+}
+
+.visible {
+    display: flex;
+}
+
+.time-visible {
+    display: inline-block;
 }
 
 .footer {
