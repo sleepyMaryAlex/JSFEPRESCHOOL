@@ -63,3 +63,8 @@ function shuffle() {
     });
 }
 shuffle();
+
+let time = document.querySelector(".time");
+let moves = document.querySelector(".moves");
+
+console.log(getHours());

@@ -13,27 +13,36 @@ body {
     color: #bec08c;
 }
 
+.wrapper {
+    max-width: 100%;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #3d3259;
+    height: 100px;
+}
+
 .memory-game {
-    width: 600px;
-    height: 640px;
-    margin: auto;
-    margin-top: 50px;
+    width: 33%;
+    height: 72vh;
+    margin: 0 10px;
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
 }
 
-.wrapper {
-    max-width: 1440px;
-    height: 100vh;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .main {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
 }
 
 .memory-card {
@@ -72,11 +81,74 @@ body {
     width: 100px;
 }
 
+.rules {
+    width: 28%;
+    margin: 0 20px;
+}
+
+.rules h2 {
+    margin-top: 130px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px #8E83AC, -2px -2px 1px #8E83AC;
+}
+
+.rules p {
+    line-height: 30px;
+}
+
+.current-game {
+    width: 28%;
+    margin: 0 20px;
+}
+
+.header h1 {
+    font-size: 65px;
+    margin: 10px;
+    text-shadow: 2px 2px 6px #8E83AC, -2px -2px 1px #8E83AC;
+}
+
+.current-game p {
+    font-size: 27px;
+    margin: 20px;
+}
+
+.new-game {
+    position: absolute;
+    right: 20px;
+    width: 170px;
+    height: 50px;
+    margin: 25px;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #332d43;
+    color: #bec08c;
+    transform: scale(1);
+    transition: color 0.6s;
+}
+
+.new-game:active {
+    transform: scale(0.96);
+}
+
+.new-game:hover {
+    color: #8374ac;
+}
+
 .footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: 50px;
+    /* margin: 50px; */
+    background-color: #3D3259;
+    padding: 15px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 
 .footer-data span:nth-child(2) {

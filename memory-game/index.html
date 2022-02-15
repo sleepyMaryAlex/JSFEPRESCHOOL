@@ -10,9 +10,14 @@
 <body>
     <div class="wrapper">
         <header class="header">
-
+            <h1>Memory Game</h1>
+            <button class="new-game">Start a new game</button>
         </header>
         <main class="main">
+            <section class="current-game">
+                <p>Time: <span class="time"></span></p>
+                <p>Moves: <span class="moves"></span></p>
+            </section>
             <section class="memory-game">
                 <div class="memory-card" data-card="card1">
                     <img src="assets/card-set/all-come-true.jpg" alt="all come true" class="front-face">
@@ -62,6 +67,10 @@
                     <img src="assets/card-set/still-cold.jpg" alt="still cold" class="front-face">
                     <img src="assets/card-set/js-badge.jpg" alt="Memory card" class="back-face">
                 </div>
+            </section>
+            <section class="rules">
+                <h2>Rules of the game</h2>
+                <p>By clicking on a card, the player turns it over and clicks on the next card. If two cards have the same drawings, they remain open; if the drawings are different, the cards are turned face down. The goal of the game is to open all the cards in the least number of moves.</p>
             </section>
         </main>
         <footer class="footer">
