@@ -110,14 +110,14 @@ body {
 .current-game p {
     font-size: 27px;
     margin: 20px;
+    margin-left: 30%;
 }
 
 .new-game {
-    position: absolute;
-    right: 20px;
     width: 170px;
     height: 50px;
     margin: 25px;
+    margin-left: 35%;
     font-family: inherit;
     font-size: 20px;
     font-weight: bold;
@@ -125,7 +125,7 @@ body {
     outline: none;
     border: none;
     border-radius: 5px;
-    background-color: #332d43;
+    background-color: #7E8142;
     color: #bec08c;
     transform: scale(1);
     transition: color 0.6s;
@@ -136,14 +136,22 @@ body {
 }
 
 .new-game:hover {
-    color: #8374ac;
+    color: #1c103a;
+}
+
+.time {
+    display: inline-block;
+    width: 140px;
+    height: 42px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #515415;
 }
 
 .footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    /* margin: 50px; */
     background-color: #3D3259;
     padding: 15px;
     position: absolute;
