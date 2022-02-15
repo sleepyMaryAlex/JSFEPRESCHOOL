@@ -1,9 +1,12 @@
 const cards = document.querySelectorAll(".memory-card");
+let time = document.querySelector(".time");
+let moves = document.querySelector(".moves");
 
 let hasFlippedCard = false;
 let firstCard;
 let secondCard;
 let lockBoard = false;
+let numberOfMoves = 0;
 
 function flipCard() {
   if (lockBoard) {
@@ -25,6 +28,8 @@ function flipCard() {
 }
 
 function checkForMatch() {
+    numberOfMoves += 1;
+    moves.textContent = numberOfMoves;
     if (firstCard.dataset.card === secondCard.dataset.card) {
         disableCards();
         return;
@@ -63,9 +68,6 @@ function shuffle() {
     });
 }
 shuffle();
-
-let time = document.querySelector(".time");
-let moves = document.querySelector(".moves");
 
 let sec = 0;
 let min = 0;
