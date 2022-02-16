@@ -1,6 +1,6 @@
 const cards = document.querySelectorAll(".memory-card");
-let time = document.querySelector(".time");
-let moves = document.querySelector(".moves");
+const time = document.querySelector(".time");
+const moves = document.querySelector(".moves");
 const disneyCards = document.querySelector(".disney-cards");
 const actorsCards = document.querySelector(".actors-cards");
 const scienceCards = document.querySelector(".science-cards");
@@ -9,6 +9,8 @@ const currentGame = document.querySelector(".current-game");
 const memoryGame = document.querySelector(".memory-game");
 const rules = document.querySelector(".rules");
 const main = document.querySelector(".main");
+const result = document.querySelector(".result");
+const winner = document.querySelector(".winner");
 const setsOfCards = document.querySelector(".sets-of-cards");
 const sets = document.querySelectorAll(".set");
 const frontFace = document.querySelectorAll(".front-face");
@@ -18,11 +20,13 @@ let firstCard;
 let secondCard;
 let lockBoard = false;
 let numberOfMoves = 0;
+let count = 0;
 
 disneyCards.addEventListener("click", chooseSet);
 actorsCards.addEventListener("click", chooseSet);
 scienceCards.addEventListener("click", chooseSet);
 play.addEventListener("click", startGame);
+cards.forEach((card) => card.addEventListener("click", flipCard));
 
 function chooseSet() {
     sets.forEach(set => set.classList.remove("cards-active"));
@@ -88,6 +92,8 @@ function disableCards() {
     firstCard.removeEventListener("click", flipCard);
     secondCard.removeEventListener("click", flipCard);
     resetBoard();
+    count += 1;
+    checkGameEnding();
 }
 
 function unflipCards() {
@@ -106,8 +112,6 @@ function resetBoard() {
     secondCard = null;
 }
 
-cards.forEach((card) => card.addEventListener("click", flipCard));
-
 function shuffle() {
     cards.forEach(card => {
         let randomPos = Math.floor(Math.random() * 12);
@@ -115,6 +119,26 @@ function shuffle() {
     });
 }
 shuffle();
+
+function checkGameEnding() {
+    if (count === cards.length / 2) {
+        setTimeout(finishGame, 1300);
+    }
+}
+
+function finishGame() {
+    clearTimeout(t);
+    main.classList.add("gif");
+    result.classList.add("result-after");
+    winnerMessage();
+    winner.classList.add("winner-after");
+}
+
+function winnerMessage() {
+    let messages = ["Good job!", "Well done!", "You rock", "You rule!", "Bravo!", "That's perfect!", "Keep it up!", "Right on!"];
+    let randomNum = Math.floor(Math.random() * 8);
+    winner.textContent = messages[randomNum];
+}
 
 let sec = 0;
 let min = 0;
@@ -143,9 +167,9 @@ function timer() {
     t = setTimeout(add, 1000); 
 }
 
-let newGameBtn = document.querySelector(".new-game");
+// let newGameBtn = document.querySelector(".new-game");
 
-newGameBtn.addEventListener("click", startNewGame);
+// newGameBtn.addEventListener("click", startNewGame);
 
 // function startNewGame() {
 //     shuffle();

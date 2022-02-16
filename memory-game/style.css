@@ -46,7 +46,19 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    min-height: 611px;
+    min-height: 612px;
+}
+
+.gif {
+    background-image: url(assets/card-set/gif.gif);
+}
+
+.result {
+    display: none;
+}
+
+.winner {
+    display: none;
 }
 
 .memory-card {
@@ -117,11 +129,26 @@ body {
     text-shadow: 2px 2px 6px #8E83AC, -2px -2px 1px #8E83AC;
 }
 
-.current-game p {
+.game-item {
     font-size: 27px;
     font-weight: bold;
     margin: 20px;
     margin-left: 30%;
+}
+
+.result-after {
+    display: flex;
+    font-size: 40px;
+    text-shadow: 2px 2px 3px #8E83AC;
+}
+
+.winner-after {
+    display: flex;
+    margin-left: 26%;
+    font-size: 60px;
+    font-weight: bold;
+    color: #515415;
+    text-shadow: 2px 2px 4px #c0b57a;
 }
 
 .new-game {
