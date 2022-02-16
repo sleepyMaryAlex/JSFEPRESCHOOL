@@ -153,8 +153,13 @@ function checkKey(e) {
 }
 
 function changeImg() {
-  cancel.setAttribute("src", "assets/cancel.svg");
-  cancel.style.cursor = "pointer";
+  if (input.value !== "") {
+    cancel.setAttribute("src", "assets/cancel.svg");
+    cancel.style.cursor = "pointer";
+  } else if (input.value === "") {
+    cancel.setAttribute("src", "assets/search.svg");
+    cancel.style.cursor = "auto";
+  }
 }
 
 function clearInput() {
@@ -171,7 +176,8 @@ function clearInput() {
 function searchMovie() {
   mainContainer.innerHTML = "";
   inputValue = input.value;
-  if (inputValue === "") {
+  if (inputValue.trim() === "") {
+    caption.textContent = "Popular movies";
     getData(DEFAULT_URL);
   } else {
     caption.textContent = "Found movies";
