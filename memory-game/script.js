@@ -8,6 +8,8 @@ const play = document.querySelector(".play");
 const currentGame = document.querySelector(".current-game");
 const memoryGame = document.querySelector(".memory-game");
 const rules = document.querySelector(".rules");
+const rulesH2 = document.querySelector(".rules-h2");
+const rulesP = document.querySelector(".rules-p");
 const main = document.querySelector(".main");
 const result = document.querySelector(".result");
 const winner = document.querySelector(".winner");
@@ -21,8 +23,12 @@ let secondCard;
 let lockBoard = false;
 let numberOfMoves = 0;
 let count = 0;
+let resultTime;
+let resultMoves;
+let arrResult = [];
 
 disneyCards.addEventListener("click", chooseSet);
+window.addEventListener("load", getFromStorage);
 actorsCards.addEventListener("click", chooseSet);
 scienceCards.addEventListener("click", chooseSet);
 play.addEventListener("click", startGame);
@@ -122,7 +128,7 @@ shuffle();
 
 function checkGameEnding() {
     if (count === cards.length / 2) {
-        setTimeout(finishGame, 1300);
+        setTimeout(finishGame, 1000);
     }
 }
 
@@ -130,14 +136,55 @@ function finishGame() {
     clearTimeout(t);
     main.classList.add("gif");
     result.classList.add("result-after");
+    rulesH2.classList.add("invisible");
+    rulesP.classList.add("invisible");
     winnerMessage();
     winner.classList.add("winner-after");
+    saveToStorage();
 }
 
 function winnerMessage() {
-    let messages = ["Good job!", "Well done!", "You rock", "You rule!", "Bravo!", "That's perfect!", "Keep it up!", "Right on!"];
+    let messages = ["Good job!", "Well done!", "You rock!", "You rule!", "Bravo!", "That's perfect!", "Keep it up!", "Right on!"];
     let randomNum = Math.floor(Math.random() * 8);
     winner.textContent = messages[randomNum];
+}
+
+function saveToStorage() {
+    resultTime = time.textContent;
+    resultMoves = moves.textContent;
+    let currentDate = createDate();
+    let objResult = {
+        date: currentDate,
+        time: resultTime,
+        moves: resultMoves
+    } 
+    arrResult.unshift(objResult);
+    localStorage.setItem("arrResult", JSON.stringify(arrResult));
+    console.log(arrResult);
+    createRecordTable();
+}
+
+function getFromStorage() {
+    if (localStorage.getItem("arrResult")) {
+        arrResult = JSON.parse(localStorage.getItem("arrResult"));
+        console.log(arrResult);
+    }
+}
+function createDate() {
+    let date = new Date();
+    let monthNum = date.getMonth();
+    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    let month = months[monthNum];
+    let currentDate = month + " " + date.getDate() + " " + date.getFullYear() + " " + date.toTimeString().substring(0, 8);
+    return currentDate;
+}
+
+function createRecordTable() {
+    let p = document.createElement("p");
+    rules.append(p);
+    p.textContent = "Records";
+    p.classList.add("records");
+    
 }
 
 let sec = 0;
