@@ -14,6 +14,7 @@ const main = document.querySelector(".main");
 const body = document.querySelector("body");
 const result = document.querySelector(".result");
 const winner = document.querySelector(".winner");
+const table = document.querySelector(".table");
 const setsOfCards = document.querySelector(".sets-of-cards");
 const sets = document.querySelectorAll(".set");
 const frontFace = document.querySelectorAll(".front-face");
@@ -58,15 +59,12 @@ function startGame() {
     play.classList.add("invisible");
     currentGame.classList.add("visible");
     memoryGame.classList.add("visible");
-    rules.classList.add("rules-after");
     main.classList.add("main-after");
     timer();
     replaceCards();
-    rules.classList.remove("result-list");
-    article.innerHTML = "";
-    aside.innerHTML = "";
-    rulesH2.classList.remove("invisible");
-    rulesP.classList.remove("invisible");
+    rules.classList.remove("invisible");
+    rules.classList.add("rules-after");
+    table.classList.add("invisible");
   }
 }
 
@@ -192,9 +190,11 @@ function checkGameEnding() {
 function finishGame() {
   clearTimeout(t);
   body.classList.add("gif");
-  result.classList.add("result-after");
-  rulesH2.classList.add("invisible");
-  rulesP.classList.add("invisible");
+  table.classList.add("table-style");
+  table.classList.remove("invisible");
+  rules.classList.add("invisible");
+  aside.classList.remove("invisible");
+  
   winnerMessage();
   winner.classList.add("winner-after");
   saveToStorage();
@@ -423,9 +423,7 @@ function startNewGame() {
     cards.forEach(card => card.classList.remove("flip"));
     cards.forEach((card) => card.addEventListener("click", flipCard));
     body.classList.remove("gif");
-    rulesH2.classList.add("invisible");
-    rulesP.classList.add("invisible");
-    rules.classList.add("result-list");
+    rules.classList.add("invisible");
     winner.classList.remove("winner-after");
-    aside.innerHTML = "";
+    aside.classList.add("invisible");
 }

@@ -41,6 +41,7 @@ body {
 
 .main {
     margin-top: 30px;
+    min-height: 75vh;
 }
 
 .main-after {
@@ -247,6 +248,17 @@ body {
     padding: 25px;
 }
 
+.table {
+    display: none;
+}
+
+.table-style {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .play {
     width: 170px;
     height: 50px;
@@ -273,7 +285,7 @@ body {
 }
 
 .records {
-    margin-top: -100px;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -289,6 +301,7 @@ body {
 .game-history {
     text-align: center;
     margin-top: 15px;
+    font-weight: bold;
 }
 
 .result-list {
@@ -351,16 +364,12 @@ body {
 
     .rules-after {
         width: 28%;
-        margin-top: 72px;
+        margin-top: 40px;
         margin-bottom: 10px;
     }
 
     .current-game {
         margin: 0;
-    }
-
-    .result-list {
-        height: 75px;
     }
 }
 
@@ -371,13 +380,9 @@ body {
         min-height: 612px;
     }
 
-    .result-list {
-        height: 105px;
-    }
-
     .memory-game {
         height: 340px;
-        margin-top: 40px;
+        margin-top: 30px;
     }
 
     article,
@@ -385,17 +390,17 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 85px;
+        margin-top: 20px;
     }
 
     .rules {
         width: 95%;
         margin: 0 20px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 
     .rules-after {
-        margin-top: 90px;
+        margin-top: 50px;
     }
 
     .main {
@@ -458,8 +463,14 @@ body {
         top: 320px;
     }
 
-    .result-list {
-        height: 155px;
+    article,
+    aside {
+        line-height: 27px;
+    }
+
+    .span-style,
+    .record-text {
+        font-size: 16px;
     }
 }
 
@@ -469,10 +480,6 @@ body {
         height: 48px; 
         font-size: 19px;
         line-height: 18px;
-    }
-
-    .result-list {
-        width: 93%;
     }
 }
 
@@ -502,6 +509,10 @@ body {
         font-size: 19px;
         line-height: 18px;
     }
+
+    .rules {
+        width: 90%;
+    }
 }
 
 @media (max-width: 362px) {
@@ -529,10 +540,6 @@ body {
 
     .footer-data span:nth-child(2) {
         margin: 0 5px;
-    }
-
-    .result-list {
-        height: 175px;
     }
 }
 
