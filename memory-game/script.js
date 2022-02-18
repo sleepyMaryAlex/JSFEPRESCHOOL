@@ -33,6 +33,9 @@ let min = 0;
 let hour = 0;
 let t;
 
+let article = document.querySelector("article");
+let aside = document.querySelector("aside");
+
 disneyCards.addEventListener("click", chooseSet);
 window.addEventListener("load", getFromStorage);
 actorsCards.addEventListener("click", chooseSet);
@@ -60,6 +63,10 @@ function startGame() {
     timer();
     replaceCards();
     rules.classList.remove("result-list");
+    article.innerHTML = "";
+    aside.innerHTML = "";
+    rulesH2.classList.remove("invisible");
+    rulesP.classList.remove("invisible");
   }
 }
 
@@ -260,7 +267,7 @@ function createDate() {
 
 function createRecordTable(arrResult) {
   let p = document.createElement("p");
-  rules.append(p);
+  article.append(p);
   p.textContent = "Records";
   p.classList.add("records");
   let indexes = findTheBest(arrResult);
@@ -273,7 +280,7 @@ function createRecordTable(arrResult) {
 function createRecordText(arrResult, n, indexes) {
     if (arrResult[n] !== undefined) {
         let div = document.createElement("div");
-        rules.append(div);
+        article.append(div);
         let span1 = document.createElement("span");
         div.append(span1);
         span1.textContent = `${n + 1}. Date: `;
@@ -303,7 +310,7 @@ function createRecordText(arrResult, n, indexes) {
 
 function createGameHistory(arrResult) {
     let p = document.createElement("p");
-    rules.append(p);
+    aside.append(p);
     p.textContent = "Results of the last 10 games";
     p.classList.add("game-history");
     for (let i = 0; i < 10; i++) {
@@ -314,7 +321,7 @@ function createGameHistory(arrResult) {
 
 function createHistoryText(arrResult, n) {
     let div = document.createElement("div");
-    rules.append(div);
+    aside.append(div);
     let span1 = document.createElement("span");
     div.append(span1);
     if (arrResult[n] !== undefined) {
@@ -420,4 +427,5 @@ function startNewGame() {
     rulesP.classList.add("invisible");
     rules.classList.add("result-list");
     winner.classList.remove("winner-after");
+    aside.innerHTML = "";
 }

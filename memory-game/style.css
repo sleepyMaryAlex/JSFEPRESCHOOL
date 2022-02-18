@@ -15,7 +15,7 @@ body {
 
 .wrapper {
     max-width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -290,7 +290,7 @@ body {
 }
 
 .result-list {
-    margin-top: 115px;
+    margin-top: 129px;
     display: flex;
     flex-direction: column;
     align-items: center;
