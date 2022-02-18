@@ -59,6 +59,7 @@ function startGame() {
     main.classList.add("main-after");
     timer();
     replaceCards();
+    rules.classList.remove("result-list");
   }
 }
 
@@ -219,7 +220,6 @@ function saveToStorage() {
   };
   arrResult.unshift(objResult);
   localStorage.setItem("arrResult", JSON.stringify(arrResult));
-  console.log(arrResult);
   createRecordTable(arrResult);
   createGameHistory(arrResult);
 }
@@ -227,7 +227,6 @@ function saveToStorage() {
 function getFromStorage() {
   if (localStorage.getItem("arrResult")) {
     arrResult = JSON.parse(localStorage.getItem("arrResult"));
-    console.log(arrResult);
   }
 }
 function createDate() {
@@ -300,7 +299,6 @@ function createRecordText(arrResult, n, indexes) {
         span6.textContent = arrResult[indexes[n]]["moves"];
         span6.classList.add("record-text");
     }
-
 }
 
 function createGameHistory(arrResult) {
@@ -320,7 +318,7 @@ function createHistoryText(arrResult, n) {
     let span1 = document.createElement("span");
     div.append(span1);
     if (arrResult[n] !== undefined) {
-        span1.textContent = `${n + 1}. Date: `;
+        span1.textContent = "◉ Date: ";
         span1.classList.add("span-style");
         let span2 = document.createElement("span");
         div.append(span2);
@@ -343,7 +341,6 @@ function createHistoryText(arrResult, n) {
         span6.textContent = arrResult[n]["moves"];
         span6.classList.add("record-text");
     }
-
 }
 
 function findTheBest(results) {
@@ -354,7 +351,6 @@ function findTheBest(results) {
     }))
     .sort((a, b) => a.sum - b.sum)
     .map((value) => value.index);
-  // console.log(indexes);
   return indexes;
 }
 
@@ -385,10 +381,43 @@ function timer() {
   t = setTimeout(add, 1000);
 }
 
-// let newGameBtn = document.querySelector(".new-game");
 
-// newGameBtn.addEventListener("click", startNewGame);
+// document.addEventListener("click", playAudio);
+// const audio = document.querySelector("audio");
 
-// function startNewGame() {
-//     shuffle();
+// function playAudio() {
+//     audio.src = "assets/audio/Helios - Bless This Morning Year.mp3"
+//     audio.currentTime = 0;
+//     audio.play();
 // }
+
+let newGameBtn = document.querySelector(".new-game");
+
+newGameBtn.addEventListener("click", startNewGame);
+
+function startNewGame() {
+    setsOfCards.classList.remove("invisible");
+    play.classList.remove("invisible");
+    currentGame.classList.remove("visible");
+    memoryGame.classList.remove("visible");
+    rules.classList.remove("rules-after");
+    main.classList.remove("main-after");
+    clearTimeout(t);
+    sec = 0;
+    min = 0;
+    hour = 0;
+    count = 0;
+    time.textContent = "00:00:00";
+    numberOfMoves = 0;
+    moves.textContent = "0";
+    shuffle();
+    hasFlippedCard = false;
+    lockBoard = false;
+    cards.forEach(card => card.classList.remove("flip"));
+    cards.forEach((card) => card.addEventListener("click", flipCard));
+    body.classList.remove("gif");
+    rulesH2.classList.add("invisible");
+    rulesP.classList.add("invisible");
+    rules.classList.add("result-list");
+    winner.classList.remove("winner-after");
+}
