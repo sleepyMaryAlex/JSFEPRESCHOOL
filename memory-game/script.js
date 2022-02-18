@@ -207,7 +207,7 @@ function winnerMessage() {
     "You rock!",
     "You rule!",
     "Bravo!",
-    "That's perfect!",
+    "Perfect!",
     "Keep it up!",
     "Right on!",
   ];
@@ -311,7 +311,7 @@ function createRecordText(arrResult, n, indexes) {
 function createGameHistory(arrResult) {
     let p = document.createElement("p");
     aside.append(p);
-    p.textContent = "Results of the last 10 games";
+    p.textContent = "Results of the last games";
     p.classList.add("game-history");
     for (let i = 0; i < 10; i++) {
         let n = i;
