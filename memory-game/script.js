@@ -65,6 +65,8 @@ function startGame() {
     rules.classList.remove("invisible");
     rules.classList.add("rules-after");
     table.classList.add("invisible");
+    article.innerHTML = "";
+    aside.innerHTML = "";
   }
 }
 
