@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/ico/amnesia.ico">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <h1>Memory Game</h1>
+        </header>
+        <main class="main">
+            <section class="current-game">
+                <button class="new-game">Start new game</button>
+                <p class="game-item winner"></p>
+                <p class="game-item result">Your result:</p>
+                <p class="game-item">Time: <span class="time">00:00:00</span></p>
+                <p class="game-item">Moves: <span class="moves">0</span></p>
+            </section>
+            <section class="memory-game">
+                <div class="memory-card" data-card="card1">
+                    <img src="assets/card-set/emma.jpg" alt="card" class="front-face">
+                    <img src="assets/card-set/badge.jpg" alt="Memory card" class="back-face">
+                </div>
+                <div class="memory-card" data-card="card1">
+                    <img src="assets/card-set/emma.jpg" alt="card" class="front-face">
+                    <img src="assets/card-set/badge.jpg" alt="Memory card" class="back-face">
+                </div>
+                <div class="memory-card" data-card="card2">
+                    <img src="assets/card-set/robert.jpg" alt="card" class="front-face">
+                    <img src="assets/card-set/badge.jpg" alt="Memory card" class="back-face">
+                </div>
+                <div class="memory-card" data-card="card2">
+                    <img src="assets/card-set/robert.jpg" alt="card" class="front-face">
+                    <img src="assets/card-set/badge.jpg" alt="Memory card" class="back-face">
+                </div>
+                <div class="memory-card" data-card="card3">
+                    <img src="assets/card-set/kira.jpg" alt="card" class="front-face">
+                    <img src="assets/card-set/badge.jpg" alt="Memory card" class="back-face">
+                </div>
+                <div class="memory-card" data-card="card3">
+                    <img src="assets/card-set/kira.jpg" alt="card" class="front-face">
+                    <img src="assets/card-set/badge.jpg" alt="Memory card" class="back-face">
+                </div>
+                <div class="memory-card" data-card="card4">
+                    <img src="assets/card-set/dwayne.jpg" alt="card" class="front-face">
+                    <img src="assets/card-set/badge.jpg" alt="Memory card" class="back-face">
+                </div>
+                <div class="memory-card" data-card="card4">
+                    <img src="assets/card-set/dwayne.jpg" alt="card" class="front-face">
+                    <img src="assets/card-set/badge.jpg" alt="Memory card" class="back-face">
+                </div>
+                <div class="memory-card" data-card="card5">
+                    <img src="assets/card-set/benedict.jpg" alt="card" class="front-face">
+                    <img src="assets/card-set/badge.jpg" alt="Memory card" class="back-face">
+                </div>
+                <div class="memory-card" data-card="card5">
+                    <img src="assets/card-set/benedict.jpg" alt="card" class="front-face">
+                    <img src="assets/card-set/badge.jpg" alt="Memory card" class="back-face">
+                </div>
+                <div class="memory-card" data-card="card6">
+                    <img src="assets/card-set/fanning.jpg" alt="card" class="front-face">
+                    <img src="assets/card-set/badge.jpg" alt="Memory card" class="back-face">
+                </div>
+                <div class="memory-card" data-card="card6">
+                    <img src="assets/card-set/fanning.jpg" alt="card" class="front-face">
+                    <img src="assets/card-set/badge.jpg" alt="Memory card" class="back-face">
+                </div>
+            </section>
+            <section class="rules">
+                <h2 class="rules-h2">Rules</h2>
+                <p class="rules-p">By clicking on a card, the player turns it over and clicks on the next card. If two cards have the same drawings, they remain open; if the drawings are different, the cards are turned face down. The goal of the game is to open all the cards in the least number of moves.</p>
+                <article></article>
+                <aside></aside>
+            </section>
+            <section class="sets-of-cards">
+                <h2>Choose a set of cards</h2>
+                <div class="disney-cards set">
+                    <p>Disney:</p>
+                    <img src="assets/card-set/beauty.jpg" alt="disney">
+                    <img src="assets/card-set/disney.jpg" alt="disney">
+                    <img src="assets/card-set/moana.jpg" alt="disney">
+                    <img src="assets/card-set/lion.jpg" alt="disney">
+                    <img src="assets/card-set/soul.jpg" alt="disney">
+                    <img src="assets/card-set/zootopia.jpg" alt="disney">
+                </div>
+                <div class="actors-cards set">
+                    <p>Actors:</p>
+                    <img src="assets/card-set/emma.jpg" alt="actor">
+                    <img src="assets/card-set/benedict.jpg" alt="actor">
+                    <img src="assets/card-set/dwayne.jpg" alt="actor">
+                    <img src="assets/card-set/kira.jpg" alt="actor">
+                    <img src="assets/card-set/fanning.jpg" alt="actor">
+                    <img src="assets/card-set/robert.jpg" alt="actor">
+                </div>
+                <div class="science-cards set">
+                    <p>Science:</p>
+                    <img src="assets/card-set/science1.jpg" alt="science">
+                    <img src="assets/card-set/science2.jpg" alt="science">
+                    <img src="assets/card-set/science3.jpg" alt="science">
+                    <img src="assets/card-set/science4.jpg" alt="science">
+                    <img src="assets/card-set/science5.jpg" alt="science">
+                    <img src="assets/card-set/science6.jpg" alt="science">
+                </div>
+                <button class="play">Play</button>
+            </section>
+            <audio src="assets/audio/Helios - Bless This Morning Year.mp3"></audio>
+        </main>
+        <footer class="footer">
+            <div class="footer-data">
+                <span>&#169;</span>
+                <span>2022</span>
+                <a class="github-link" href="https://github.com/sleepyMaryAlex" target="_blank">github</a>
+            </div>
+            <a class="rs-link" href="https://rs.school/js-stage0/" target="_blank"><img class="rs-img" src="assets/svg/rs-school.svg" alt="logo"></a>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
