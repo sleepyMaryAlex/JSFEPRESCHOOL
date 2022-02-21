@@ -105,7 +105,6 @@ body {
 .rules-after {
     width: 28%;
     margin-top: -80px;
-    /* margin-top: 10px; */
     margin-bottom: 10px;
 }
 
@@ -141,7 +140,7 @@ body {
 }
 
 .div-style {
-    width: 315px;
+    width: 310px;
     text-align: center;
     line-height: 22px;
 }
