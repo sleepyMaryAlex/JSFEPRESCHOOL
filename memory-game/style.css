@@ -39,7 +39,7 @@ body {
 }
 
 .main {
-    /* margin-top: 30px; */
+    margin-top: 7px;
     min-height: calc(100vh - 176px);
     display: flex;
     flex-direction: column;
