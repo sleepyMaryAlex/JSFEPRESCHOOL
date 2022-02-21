@@ -35,6 +35,7 @@ let sec = 0;
 let min = 0;
 let hour = 0;
 let t;
+let s = 0;
 
 disneyCards.addEventListener("click", chooseSet);
 window.addEventListener("load", getFromStorage);
@@ -199,7 +200,6 @@ function finishGame() {
   rules.classList.add("invisible");
   aside.classList.remove("invisible");
   result.classList.add("result-after");
-  
   winnerMessage();
   winner.classList.add("winner-after");
   saveToStorage();
@@ -228,10 +228,13 @@ function saveToStorage() {
     date: currentDate,
     time: resultTime,
     moves: resultMoves,
-    seconds: sec,
+    seconds: s,
   };
   arrResult.unshift(objResult);
   localStorage.setItem("arrResult", JSON.stringify(arrResult));
+  if (arrResult.length > 10) {
+    arrResult.pop();
+  }
   createRecordTable(arrResult);
   createGameHistory(arrResult);
 }
@@ -276,7 +279,7 @@ function createRecordTable(arrResult) {
   p.textContent = "Records";
   p.classList.add("records");
   let indexes = findTheBest(arrResult);
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 10; i++) {
       let n = i;
       createRecordText(arrResult, n, indexes);
     }
@@ -370,6 +373,7 @@ function findTheBest(results) {
 
 function tick() {
   sec++;
+  s++;
   if (sec >= 60) {
     sec = 0;
     min++;
@@ -412,6 +416,7 @@ function startNewGame() {
     min = 0;
     hour = 0;
     count = 0;
+    s = 0;
     time.textContent = "00:00:00";
     numberOfMoves = 0;
     moves.textContent = "0";
@@ -427,3 +432,5 @@ function startNewGame() {
     article.classList.remove("invisible");
     table.classList.remove("invisible");
 }
+
+console.log("Добавлено: возможность выбрать набор карт, рекорды высчитываются учитывая затраченное время и количество ходов, адаптивная верстка. Буду благодарна за найденные баги!")
