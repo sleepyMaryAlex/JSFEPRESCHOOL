@@ -15,7 +15,6 @@ body {
 
 .wrapper {
     max-width: 100%;
-    min-height: 100vh;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -32,7 +31,7 @@ body {
 .memory-game {
     max-width: 600px;
     min-width: 500px;
-    height: 600px;
+    height: 550px;
     margin: 0 10px;
     display: none;
     flex-wrap: wrap;
@@ -40,15 +39,18 @@ body {
 }
 
 .main {
-    margin-top: 30px;
-    min-height: 75vh;
+    /* margin-top: 30px; */
+    min-height: calc(100vh - 176px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .main-after {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    min-height: 612px;
 }
 
 .gif {
@@ -95,17 +97,13 @@ body {
     transform: rotateY(180deg);
 }
 
-.rs-img {
-    width: 100px;
-}
-
 .rules {
     margin: 0 20px;
 }
 
 .rules-after {
     width: 28%;
-    margin-top: 72px;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -140,6 +138,12 @@ body {
     text-align: center;
 }
 
+.div-style {
+    width: 315px;
+    text-align: center;
+    line-height: 22px;
+}
+
 .result-after {
     display: flex;
     font-size: 40px;
@@ -158,6 +162,7 @@ body {
     width: 190px;
     height: 50px;
     margin: 25px;
+    margin-top: 0;
     font-family: inherit;
     font-size: 26px;
     font-weight: 700;
@@ -205,7 +210,7 @@ body {
 }
 
 .sets-of-cards h2 {
-    margin: 30px 20px 10px 20px;
+    margin: 15px 20px 10px 20px;
     text-shadow: 2px 2px 6px #8E83AC, -2px -2px 1px #8E83AC;
 }
 
@@ -253,7 +258,7 @@ body {
 }
 
 .table-style {
-    margin: 10px;
+    margin: 5px 30px 10px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -334,6 +339,7 @@ body {
     text-decoration: none;
     color: #7e8142;
     transition: color 0.6s;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .github-link:hover {
@@ -343,10 +349,18 @@ body {
 .rs-img {
     filter: brightness(0) saturate(100%) invert(47%) sepia(67%) saturate(288%) hue-rotate(24deg) brightness(90%) contrast(89%);
     transition: filter 0.6s;
+    width: 100px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .rs-img:hover {
     filter: brightness(0) saturate(100%) invert(29%) sepia(8%) saturate(2087%) hue-rotate(25deg) brightness(92%) contrast(84%);
+}
+
+@media (max-width: 1283px) {
+    .table-style {
+        margin: 5px 0px 10px 0px;
+    }
 }
 
 @media (max-width: 1235px) {
@@ -356,8 +370,8 @@ body {
     }
 
     .memory-game {
-        max-width: 450px;
-        min-width: 450px;
+        max-width: 440px;
+        min-width: 440px;
         height: 400px;
         margin-top: 30px;
     }
@@ -377,7 +391,7 @@ body {
     .main-after {
         flex-direction: column;
         align-items: center;
-        min-height: 612px;
+        justify-content: center;
     }
 
     .memory-game {
@@ -396,15 +410,11 @@ body {
     .rules {
         width: 95%;
         margin: 0 20px;
-        margin-bottom: 15px;
     }
 
     .rules-after {
-        margin-top: 50px;
-    }
-
-    .main {
-        margin-top: 2vh;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     .current-game {
@@ -412,12 +422,12 @@ body {
         flex-direction: row;
         justify-content: center;
         width: 100%;
-        margin: 0 20px;
+        margin: 20px;
     }
 
     .winner-after {
         position: absolute;
-        top: 300px;
+        top: 370px;
         left: auto;
         right: auto;
         z-index: 3;
@@ -433,9 +443,9 @@ body {
 }
 
 @media (max-width: 685px) {
-   body {
+    body {
         font-size: 19px;
-   } 
+    } 
 
    .game-item {
         font-size: 20px;
@@ -484,6 +494,10 @@ body {
 }
 
 @media (max-width: 480px) {
+    .main {
+        min-height: calc(100vh - 174px);
+    }
+
     .memory-card {
         width: 70px;
         height: 70px;
@@ -536,6 +550,10 @@ body {
     .header h1 {
         font-size: 40px;
         margin: 25px 0;
+    }
+
+    .div-style {
+        width: 300px;
     }
 
     .footer-data span:nth-child(2) {

@@ -18,6 +18,8 @@ const table = document.querySelector(".table");
 const setsOfCards = document.querySelector(".sets-of-cards");
 const sets = document.querySelectorAll(".set");
 const frontFace = document.querySelectorAll(".front-face");
+const article = document.querySelector("article");
+const aside = document.querySelector("aside");
 
 let hasFlippedCard = false;
 let firstCard;
@@ -33,9 +35,7 @@ let sec = 0;
 let min = 0;
 let hour = 0;
 let t;
-
-let article = document.querySelector("article");
-let aside = document.querySelector("aside");
+let s = 0;
 
 disneyCards.addEventListener("click", chooseSet);
 window.addEventListener("load", getFromStorage);
@@ -55,6 +55,7 @@ function startGame() {
     actorsCards.classList.contains("cards-active") ||
     scienceCards.classList.contains("cards-active")
   ) {
+    window.scrollTo(0, 0);
     setsOfCards.classList.add("invisible");
     play.classList.add("invisible");
     currentGame.classList.add("visible");
@@ -65,7 +66,7 @@ function startGame() {
     rules.classList.remove("invisible");
     rules.classList.add("rules-after");
     table.classList.add("invisible");
-    article.innerHTML = "";
+    article.classList.add("invisible");
     aside.innerHTML = "";
   }
 }
@@ -191,12 +192,14 @@ function checkGameEnding() {
 
 function finishGame() {
   clearTimeout(t);
+  article.innerHTML = "";
+  article.classList.remove("invisible");
   body.classList.add("gif");
   table.classList.add("table-style");
   table.classList.remove("invisible");
   rules.classList.add("invisible");
   aside.classList.remove("invisible");
-  
+  result.classList.add("result-after");
   winnerMessage();
   winner.classList.add("winner-after");
   saveToStorage();
@@ -225,10 +228,13 @@ function saveToStorage() {
     date: currentDate,
     time: resultTime,
     moves: resultMoves,
-    seconds: sec,
+    seconds: s,
   };
   arrResult.unshift(objResult);
   localStorage.setItem("arrResult", JSON.stringify(arrResult));
+  if (arrResult.length > 10) {
+    arrResult.pop();
+  }
   createRecordTable(arrResult);
   createGameHistory(arrResult);
 }
@@ -273,7 +279,7 @@ function createRecordTable(arrResult) {
   p.textContent = "Records";
   p.classList.add("records");
   let indexes = findTheBest(arrResult);
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 10; i++) {
       let n = i;
       createRecordText(arrResult, n, indexes);
     }
@@ -283,6 +289,7 @@ function createRecordText(arrResult, n, indexes) {
     if (arrResult[n] !== undefined) {
         let div = document.createElement("div");
         article.append(div);
+        div.classList.add("div-style");
         let span1 = document.createElement("span");
         div.append(span1);
         span1.textContent = `${n + 1}. Date: `;
@@ -326,6 +333,7 @@ function createHistoryText(arrResult, n) {
     aside.append(div);
     let span1 = document.createElement("span");
     div.append(span1);
+    div.classList.add("div-style");
     if (arrResult[n] !== undefined) {
         span1.textContent = "◉ Date: ";
         span1.classList.add("span-style");
@@ -365,6 +373,7 @@ function findTheBest(results) {
 
 function tick() {
   sec++;
+  s++;
   if (sec >= 60) {
     sec = 0;
     min++;
@@ -390,16 +399,6 @@ function timer() {
   t = setTimeout(add, 1000);
 }
 
-
-// document.addEventListener("click", playAudio);
-// const audio = document.querySelector("audio");
-
-// function playAudio() {
-//     audio.src = "assets/audio/Helios - Bless This Morning Year.mp3"
-//     audio.currentTime = 0;
-//     audio.play();
-// }
-
 let newGameBtn = document.querySelector(".new-game");
 
 newGameBtn.addEventListener("click", startNewGame);
@@ -410,12 +409,14 @@ function startNewGame() {
     currentGame.classList.remove("visible");
     memoryGame.classList.remove("visible");
     rules.classList.remove("rules-after");
+    result.classList.remove("result-after");
     main.classList.remove("main-after");
     clearTimeout(t);
     sec = 0;
     min = 0;
     hour = 0;
     count = 0;
+    s = 0;
     time.textContent = "00:00:00";
     numberOfMoves = 0;
     moves.textContent = "0";
@@ -428,4 +429,8 @@ function startNewGame() {
     rules.classList.add("invisible");
     winner.classList.remove("winner-after");
     aside.classList.add("invisible");
+    article.classList.remove("invisible");
+    table.classList.remove("invisible");
 }
+
+console.log("Добавлено: возможность выбрать набор карт, рекорды высчитываются учитывая затраченное время и количество ходов, адаптивная верстка. Буду благодарна за найденные баги!")
