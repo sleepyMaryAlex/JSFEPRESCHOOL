@@ -32,7 +32,7 @@ body {
     max-width: 600px;
     min-width: 500px;
     height: 550px;
-    margin: 0 10px;
+    margin: 5px 10px;
     display: none;
     flex-wrap: wrap;
     perspective: 1000px;
@@ -142,7 +142,7 @@ body {
 .div-style {
     width: 310px;
     text-align: center;
-    line-height: 22px;
+    line-height: 18px;
 }
 
 .result-after {
@@ -215,17 +215,13 @@ body {
     text-shadow: 2px 2px 6px #8E83AC, -2px -2px 1px #8E83AC;
 }
 
-.disney-cards img,
-.actors-cards img,
-.science-cards img {
+.set img {
     width: 80px;
     border-radius: 5px;
     margin-right: 10px;
 }
 
-.disney-cards,
-.actors-cards,
-.science-cards {
+.set {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -238,9 +234,7 @@ body {
     transform: scale(1);
 }
 
-.disney-cards:hover,
-.actors-cards:hover,
-.science-cards:hover {
+.set:hover {
     transform: scale(1.03);
 }
 
@@ -248,9 +242,7 @@ body {
     box-shadow: 4px 4px 10px #826e42, -4px -4px 10px #826e42;
 }
 
-.disney-cards p,
-.actors-cards p,
-.science-cards p {
+.set p {
     padding: 25px;
 }
 
@@ -444,6 +436,19 @@ body {
     }
 }
 
+@media (max-width: 716px) {
+    .set img {
+        width: 55px;
+        height: 55px;
+        margin: 5px;
+    }
+
+    .set p {
+        padding: 13px;
+        padding-top: 16px;
+    }
+}
+
 @media (max-width: 685px) {
     body {
         font-size: 19px;
@@ -484,6 +489,19 @@ body {
     .record-text {
         font-size: 16px;
     }
+
+    .div-style {
+        width: 270px;
+        line-height: 22px;
+    }
+}
+
+@media (max-width: 528px) {
+    .set p {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
 }
 
 @media (max-width: 510px) {
@@ -515,6 +533,12 @@ body {
     .header h1 {
         font-size: 45px;
         margin: 22px;
+    }
+}
+
+@media (max-width: 442px) {
+    .set {
+        width: 273px;
     }
 }
 

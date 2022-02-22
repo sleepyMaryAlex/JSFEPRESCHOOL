@@ -231,10 +231,10 @@ function saveToStorage() {
     seconds: s,
   };
   arrResult.unshift(objResult);
-  localStorage.setItem("arrResult", JSON.stringify(arrResult));
   if (arrResult.length > 10) {
     arrResult.pop();
   }
+  localStorage.setItem("arrResult", JSON.stringify(arrResult));
   createRecordTable(arrResult);
   createGameHistory(arrResult);
 }
@@ -244,6 +244,7 @@ function getFromStorage() {
     arrResult = JSON.parse(localStorage.getItem("arrResult"));
   }
 }
+
 function createDate() {
   let date = new Date();
   let monthNum = date.getMonth();
